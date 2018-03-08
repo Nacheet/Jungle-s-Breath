@@ -9,7 +9,7 @@ public class PlayerController: MonoBehaviour {
     public Transform groundCheck;
     public float maxSpeed = 17;
     public bool grounded = false;
-    private bool movingRight, movingLeft;
+    public bool movingRight, movingLeft;
 
     //Variables salt
     public float jumpVelocity = 19.0f;
@@ -17,23 +17,22 @@ public class PlayerController: MonoBehaviour {
     private bool falling;
     //Variables salt paret
     public Transform playerRight, playerLeft;
-    private bool slidingL, slidingR;
+    public bool slidingL, slidingR;
     private bool wallJumping, jumpR, jumpL;
     const float jumpXCap = 0.8f;
     public float slidingGravity = 2.0f;
 
-    //Moviment del escut
-    public bool shieldRight, shieldLeft, shieldDown, shieldUp, shieldDefault;
-    public bool usingShield = false;
+    ////Moviment del escut
+    public bool usingShield;
+    public bool shieldDefault;
+    //Variables del moviment del escut
     public float newSpeed;
     private float maxSpeedCopy;
-
 
     void Start ()
     {
         player = GameObject.Find("Player");
         GetComponent<Rigidbody2D>().gravityScale = minGravity;
-
         newSpeed = maxSpeed / 4;
         maxSpeedCopy = maxSpeed;
     }
@@ -51,13 +50,14 @@ public class PlayerController: MonoBehaviour {
         move(Input.GetAxis("Horizontal"));
 
         //Per saber si el jugador es mou cap a la dreta o cap a la esquerra
-        if (GetComponent<Rigidbody2D>().velocity.x < 0) 
-            movingLeft = true;
-        else if (GetComponent<Rigidbody2D>().velocity.x > 0)
-            movingRight = true;
-        else
+        if (GetComponent<Rigidbody2D>().velocity.x < 0)
         {
+            movingLeft = true;
             movingRight = false;
+        }
+        else if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            movingRight = true;
             movingLeft = false;
         }
 
@@ -104,7 +104,6 @@ public class PlayerController: MonoBehaviour {
         if ((slidingL || slidingR) && falling)
             GetComponent<Rigidbody2D>().gravityScale = slidingGravity;
 
-
         //Posicio del escut
         if (Input.GetButton("Fire1"))
         {
@@ -120,11 +119,7 @@ public class PlayerController: MonoBehaviour {
         {
             usingShield = false;
             GetComponent<PlayerController>().maxSpeed = maxSpeedCopy;
-            shieldDefault = true;
         }
-
-
-        shieldPosition(usingShield, movingRight, movingLeft);
     }
 
     private void move(float input)
@@ -154,79 +149,7 @@ public class PlayerController: MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().velocity += jumpVelocity * Vector2.up; //Vector2.up = (0,1) Per tant, x*0 = 0 i x*1 = x [(0,x)]
         }
-    }
-
-
-    void shieldPosition(bool usingShield, bool movingRight, bool movingLeft)
-    {
-        if (usingShield)
-        {
-            if (movingRight)
-            {
-                shieldRight = true;
-
-                shieldLeft = false;
-                shieldDown = false;
-                shieldUp = false;
-                shieldDefault = false;
-            }
-            else if (movingLeft)
-            {
-                shieldLeft = true;
-
-                shieldRight = false;
-                shieldDown = false;
-                shieldUp = false;
-                shieldDefault = false;
-            }
-            else if (Input.GetAxisRaw("Vertical") == 1)
-            {
-                shieldUp = true;
-
-                shieldRight = false;
-                shieldLeft = false;
-                shieldDown = false;
-                shieldDefault = false;
-            }
-
-            if (Input.GetAxisRaw("Vertical") == -1)
-            {
-                if (grounded)
-                {
-                    shieldDefault = true;
-
-                    shieldRight = false;
-                    shieldLeft = false;
-                    shieldDown = false;
-                    shieldUp = false;
-                }
-                else
-                {
-                    shieldDown = true;
-
-                    shieldRight = false;
-                    shieldLeft = false;
-                    shieldUp = false;
-                    shieldDefault = false;
-                }
-
-            }
-
-
-        }
-        else
-        {
-            shieldDefault = true;
-
-            shieldRight = false;
-            shieldLeft = false;
-            shieldDown = false;
-            shieldUp = false;
-        }
-
-
-    }
-
+    } 
 }
 
    
