@@ -99,10 +99,14 @@ public class ShieldMovement : MonoBehaviour
         else if (usingShield && !grounded)
         {
             if (movingRight)
-                shieldPos[0] = true; //shieldDefaultR
+                shieldPos[2] = true; //shieldRight
+            else
+                shieldPos[2] = false; //shieldRight
 
             if (movingLeft)
-                shieldPos[1] = true; //shieldDefaultL
+                shieldPos[3] = true; //shieldLeft
+            else
+                shieldPos[3] = false; //shieldLeft
 
             if (Input.GetAxisRaw("Vertical") == 1)
             {

@@ -19,7 +19,7 @@ public class PlayerController: MonoBehaviour {
     public Transform playerRight, playerLeft;
     public bool slidingL, slidingR;
     private bool wallJumping, jumpR, jumpL;
-    const float jumpXCap = 0.8f;
+    private const float jumpXCap = 0.8f;
     public float slidingGravity = 2.0f;
 
     ////Moviment del escut
@@ -33,7 +33,6 @@ public class PlayerController: MonoBehaviour {
     {
         player = GameObject.Find("Player");
         GetComponent<Rigidbody2D>().gravityScale = minGravity;
-        newSpeed = maxSpeed / 4;
         maxSpeedCopy = maxSpeed;
     }
 	
