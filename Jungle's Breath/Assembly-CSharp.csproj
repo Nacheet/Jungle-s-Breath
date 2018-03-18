@@ -53,6 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle's Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

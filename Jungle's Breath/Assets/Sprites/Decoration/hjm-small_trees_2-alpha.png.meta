@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 58a219c10f400bc408fa880a0313e72c
+timeCreated: 1521320640
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hjm-small_trees_2-alpha_0
+    21300002: hjm-small_trees_2-alpha_1
+    21300004: hjm-small_trees_2-alpha_2
+    21300006: hjm-small_trees_2-alpha_3
+    21300008: hjm-small_trees_2-alpha_4
+    21300010: hjm-small_trees_2-alpha_5
+    21300012: hjm-small_trees_2-alpha_6
+    21300014: hjm-small_trees_2-alpha_7
+    21300016: hjm-small_trees_2-alpha_8
+    21300018: hjm-small_trees_2-alpha_9
+    21300020: hjm-small_trees_2-alpha_10
+    21300022: hjm-small_trees_2-alpha_11
+    21300024: hjm-small_trees_2-alpha_12
+    21300026: hjm-small_trees_2-alpha_13
+    21300028: hjm-small_trees_2-alpha_14
+    21300030: hjm-small_trees_2-alpha_15
+    21300032: hjm-small_trees_2-alpha_16
+    21300034: hjm-small_trees_2-alpha_17
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1091
+        width: 346
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_1
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 1282
+        width: 62
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_2
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1097
+        width: 142
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_3
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 1165
+        width: 275
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_4
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 986
+        width: 171
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_5
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 1053
+        width: 135
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_6
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 863
+        width: 184
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_7
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 975
+        width: 177
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_8
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 814
+        width: 59
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_9
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 814
+        width: 366
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_10
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 485
+        width: 201
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_11
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 588
+        width: 153
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_12
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 420
+        width: 161
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_13
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 530
+        width: 81
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 295
+        width: 204
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_15
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 406
+        width: 90
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_16
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 229
+        width: 321
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hjm-small_trees_2-alpha_17
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 330
+        width: 229
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
