@@ -6,9 +6,9 @@ public class PlayerController: MonoBehaviour {
 
     //Variables moviment
     public LayerMask whatIsFloor, whatIsGround;
-    public Transform groundCheck;
+    public Transform groundCheckL, groundCheckR;
     public float maxSpeed = 17;
-    public bool grounded = false;
+    public bool groundedL= false, groundedR = false;
     public bool movingRight, movingLeft;
 
     //Variables salt
@@ -40,7 +40,8 @@ public class PlayerController: MonoBehaviour {
 	void FixedUpdate ()
     {
         //Comprova si esta al terra
-        grounded = Physics2D.Linecast(player.transform.position, groundCheck.position, whatIsGround);
+        groundedL= Physics2D.Linecast(player.transform.position, groundCheckL.position, whatIsGround);
+        groundedR = Physics2D.Linecast(player.transform.position, groundCheckR.position, whatIsGround);
         //Comprova si esta tocant la paret dreta o esquerra
         slidingR = Physics2D.Linecast(player.transform.position, playerRight.position, whatIsFloor);
         slidingL = Physics2D.Linecast(player.transform.position, playerLeft.position, whatIsFloor);
@@ -62,7 +63,7 @@ public class PlayerController: MonoBehaviour {
 
         //Salt
         if (Input.GetButtonDown("Jump"))
-            jump(grounded);
+            jump(groundedL, groundedR);
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
             GetComponent<Rigidbody2D>().gravityScale = maxGravity;
@@ -75,7 +76,7 @@ public class PlayerController: MonoBehaviour {
         }
 
         //Salt desde la paret
-        if (slidingL && !grounded && Input.GetButtonDown("Jump"))
+        if (slidingL && !groundedL && !groundedR && Input.GetButtonDown("Jump"))
         {
             float xSpeed = maxSpeed * jumpXCap;
             wallJumping = true;
@@ -84,7 +85,7 @@ public class PlayerController: MonoBehaviour {
 
         }
 
-        if (slidingR && !grounded && Input.GetButtonDown("Jump"))
+        if (slidingR && !groundedL && !groundedR && Input.GetButtonDown("Jump"))
         {
             float xSpeed = -maxSpeed * jumpXCap;
             wallJumping = true;
@@ -95,9 +96,9 @@ public class PlayerController: MonoBehaviour {
 
         if ((wallJumping) && GetComponent<Rigidbody2D>().velocity.y < 0)
             wallJumping = false;
-        if (grounded || slidingR)
+        if (groundedR || groundedL || slidingR)
             jumpR = false;
-        if (grounded || slidingL)
+        if (groundedR || groundedL || slidingL)
             jumpL = false;
 
         if ((slidingL || slidingR) && falling)
@@ -106,7 +107,7 @@ public class PlayerController: MonoBehaviour {
         //Posicio del escut
         if (Input.GetButton("Fire1"))
         {
-            if (grounded)
+            if (groundedR || groundedL)
             {
                 GetComponent<PlayerController>().maxSpeed = newSpeed;
                 usingShield = true;
@@ -142,9 +143,9 @@ public class PlayerController: MonoBehaviour {
         }
     }
 
-    private void jump(bool grounded)
+    private void jump(bool groundedL, bool groundedR)
     {
-        if (grounded)
+        if (groundedR || groundedL)
         {
             GetComponent<Rigidbody2D>().velocity += jumpVelocity * Vector2.up; //Vector2.up = (0,1) Per tant, x*0 = 0 i x*1 = x [(0,x)]
         }
