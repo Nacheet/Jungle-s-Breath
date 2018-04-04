@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Jungle's Breath.unity
+- path: Assets/Scenes/LVL1.unity
   isLoaded: 1
   isActive: 1

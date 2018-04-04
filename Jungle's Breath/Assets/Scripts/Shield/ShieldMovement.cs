@@ -130,7 +130,7 @@ public class ShieldMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetAxisRaw("Vertical") == -1 && !shieldGroundedL && !shieldGroundedR)
+            if (Input.GetAxisRaw("Vertical") == -1)//&& !shieldGroundedL && !shieldGroundedR)
             {
               
                 shieldPos[5] = true; //shieldDown

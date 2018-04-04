@@ -51,6 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ShootingScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shots\ShotBehaviour.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
  <Reference Include="Facebook.Unity.Settings">

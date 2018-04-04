@@ -5,6 +5,7 @@ public class PlayerController: MonoBehaviour {
     private GameObject player;
 
     //Variables moviment
+    public bool grounded;
     public LayerMask whatIsFloor, whatIsGround;
     public Transform groundCheckL, groundCheckR;
     public float maxSpeed = 17;
@@ -29,6 +30,14 @@ public class PlayerController: MonoBehaviour {
     public float newSpeed;
     private float maxSpeedCopy;
 
+    //Variables del atac
+    public bool shieldAtt, canAtt;
+    public float attSpeed;
+    public float attCoolDown = 4.0f;
+    public float nextAtt = 0.0f;
+    public float attDuration = 1.5f;
+    public float lastAttDone;
+
     void Start ()
     {
         player = GameObject.Find("Player");
@@ -45,6 +54,13 @@ public class PlayerController: MonoBehaviour {
         //Comprova si esta tocant la paret dreta o esquerra
         slidingR = Physics2D.Linecast(player.transform.position, playerRight.position, whatIsFloor);
         slidingL = Physics2D.Linecast(player.transform.position, playerLeft.position, whatIsFloor);
+
+        //Grounded
+        if (groundedL || groundedR)
+            grounded = true;
+        else
+            grounded = false;
+
 
         //Moviment lateral
         move(Input.GetAxis("Horizontal"));
@@ -120,12 +136,37 @@ public class PlayerController: MonoBehaviour {
             usingShield = false;
             GetComponent<PlayerController>().maxSpeed = maxSpeedCopy;
         }
+
+        //Atac amb l'escut
+
+        if (Time.time > nextAtt && grounded && usingShield)
+            canAtt = true;
+        else
+            canAtt = false;
+
+
+        if(Input.GetButtonDown("Fire2") && canAtt)
+        {
+            shieldAtt = true;
+            lastAttDone = Time.time;
+            nextAtt = Time.time + attCoolDown + attDuration;
+        }
+
+        if (lastAttDone + attDuration  >= Time.time && shieldAtt)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, 0);
+        }
+        else
+            shieldAtt = false;
+
+        
     }
 
     private void move(float input)
     {
         if (wallJumping)
             return;
+
 
         Vector2 movement = GetComponent<Rigidbody2D>().velocity;
         movement.x = input * maxSpeed; //Es modifica la velocitat de movement en el eix de les x tal que moviment rebut (input) * maxSpeed = M
