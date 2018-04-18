@@ -54,8 +54,10 @@
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
-     <Compile Include="Assets\Scripts\Enemy\ShootingScript.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Shots\ShotBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Stalactite\Stalactite.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />
      <Compile Include="Assets\Scripts\Game Control\BossAreaBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game Control\CameraAproach.cs" />
      <Compile Include="Assets\Scripts\Game Control\Fade.cs" />
@@ -67,7 +69,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Usuario/Desktop/Jungle-s-Breath-MusicCamerasMenu/Jungle's Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle's Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
