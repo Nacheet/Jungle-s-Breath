@@ -11,12 +11,6 @@ public class BoxMovement : MonoBehaviour {
 	void Start () {
         shield = GameObject.Find("Shield");
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

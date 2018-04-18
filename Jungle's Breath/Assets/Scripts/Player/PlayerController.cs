@@ -3,6 +3,7 @@
 public class PlayerController: MonoBehaviour {
 
     private GameObject player;
+    public GameObject Menu;
 
     //Variables moviment
     public bool grounded;
@@ -159,6 +160,11 @@ public class PlayerController: MonoBehaviour {
         else
             shieldAtt = false;
 
+        if (Input.GetButtonDown("Cancel")) {
+            bool itisactive;
+            itisactive = Menu.activeSelf;
+            Menu.SetActive(!itisactive);
+        }
         
     }
 
