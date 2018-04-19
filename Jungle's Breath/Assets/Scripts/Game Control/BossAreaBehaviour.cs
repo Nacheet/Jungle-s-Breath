@@ -7,7 +7,7 @@ public class BossAreaBehaviour : MonoBehaviour {
     public GameObject actualCamera;
     public GameObject mainCamera;
     public GameObject bossCamera;
-//    public GameObject mainCamera1;
+    public GameObject boss1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,13 +18,10 @@ public class BossAreaBehaviour : MonoBehaviour {
 
             GameObject.Find("Player").GetComponent<MusicChanger>().enabled = true;
 
-
             GameObject.Find("Player").GetComponent<CameraAproach>().camera1 = actualCamera;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera2 = bossCamera;
 
-
-            //bossCamera.SetActive(true);
-            //mainCamera.SetActive(false);
+            Instantiate<GameObject>(boss1);
 
         }
 
@@ -42,10 +39,6 @@ public class BossAreaBehaviour : MonoBehaviour {
 
             GameObject.Find("Player").GetComponent<CameraAproach>().camera1 = actualCamera;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera2 = mainCamera;
-
-
-            //mainCamera.SetActive(true);
-            //bossCamera.SetActive(false);
         }
     }
 

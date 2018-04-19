@@ -1,0 +1,1047 @@
+fileFormatVersion: 2
+guid: efaaf26d655b7f04eb17f8da7f47121a
+timeCreated: 1524175336
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: JP PJ (1)_0
+    21300002: JP PJ (1)_1
+    21300004: JP PJ (1)_2
+    21300006: JP PJ (1)_3
+    21300008: JP PJ (1)_4
+    21300010: JP PJ (1)_5
+    21300012: JP PJ (1)_6
+    21300014: JP PJ (1)_7
+    21300016: JP PJ (1)_8
+    21300018: JP PJ (1)_9
+    21300020: JP PJ (1)_10
+    21300022: JP PJ (1)_11
+    21300024: JP PJ (1)_12
+    21300026: JP PJ (1)_13
+    21300028: JP PJ (1)_14
+    21300030: JP PJ (1)_15
+    21300032: JP PJ (1)_16
+    21300034: JP PJ (1)_17
+    21300036: JP PJ (1)_18
+    21300038: JP PJ (1)_19
+    21300040: JP PJ (1)_20
+    21300042: JP PJ (1)_21
+    21300044: JP PJ (1)_22
+    21300046: JP PJ (1)_23
+    21300048: JP PJ (1)_24
+    21300050: JP PJ (1)_25
+    21300052: JP PJ (1)_26
+    21300054: JP PJ (1)_27
+    21300056: JP PJ (1)_28
+    21300058: JP PJ (1)_29
+    21300060: JP PJ (1)_30
+    21300062: JP PJ (1)_31
+    21300064: JP PJ (1)_32
+    21300066: JP PJ (1)_33
+    21300068: JP PJ (1)_34
+    21300070: JP PJ (1)_35
+    21300072: JP PJ (1)_36
+    21300074: JP PJ (1)_37
+    21300076: JP PJ (1)_38
+    21300078: JP PJ (1)_39
+    21300080: JP PJ (1)_40
+    21300082: JP PJ (1)_41
+    21300084: JP PJ (1)_42
+    21300086: JP PJ (1)_43
+    21300088: JP PJ (1)_44
+    21300090: JP PJ (1)_45
+    21300092: JP PJ (1)_46
+    21300094: JP PJ (1)_47
+    21300096: JP PJ (1)_48
+    21300098: JP PJ (1)_49
+    21300100: JP PJ (1)_50
+    21300102: JP PJ (1)_51
+    21300104: JP PJ (1)_52
+    21300106: JP PJ (1)_53
+    21300108: JP PJ (1)_54
+    21300110: JP PJ (1)_55
+    21300112: JP PJ (1)_56
+    21300114: JP PJ (1)_57
+    21300116: JP PJ (1)_58
+    21300118: JP PJ (1)_59
+    21300120: JP PJ (1)_60
+    21300122: JP PJ (1)_61
+    21300124: JP PJ (1)_62
+    21300126: JP PJ (1)_63
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JP PJ (1)_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_3
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_4
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_5
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_6
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_7
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_8
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_9
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_10
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1798
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_13
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_14
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_15
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_17
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_18
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_19
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_20
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_21
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_22
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_23
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_24
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_25
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 1610
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_26
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_27
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_29
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_30
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_31
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_32
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_33
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_34
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_36
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_37
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1377
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_38
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_39
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_40
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_41
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_42
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_43
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_44
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_45
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_46
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_47
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_48
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_49
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_50
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_51
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 1152
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_52
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_53
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_54
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_55
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_56
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_57
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 940
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_58
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_59
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_60
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_61
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_62
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: JP PJ (1)_63
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 729
+        width: 93
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

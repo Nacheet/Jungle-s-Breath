@@ -6,7 +6,7 @@ public class Stalactite : MonoBehaviour {
 
     public GameObject detector;
 
-    int minGravity = 0;
+    //int minGravity = 0;
     public float maxGravity;
     public bool playerUnder;
     public bool hitPlayer;
@@ -34,6 +34,7 @@ public class Stalactite : MonoBehaviour {
         else if (coll.collider.gameObject.tag == "Shield")
         {
             hitShield = true;
+            Destroy(gameObject, destroyTime);
         }
         else if (coll.collider.gameObject.tag == "Ground")
         {

@@ -17,14 +17,10 @@ public class ShotBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-        shield = GameObject.Find("Shield");
-  
+        shield = GameObject.Find("Shield"); 
 
-        vector = GameObject.Find("Enemy").GetComponent<ShootingScript>().targetEnemyVector;
-        modulo = Mathf.Sqrt(Mathf.Pow(vector.x, 2) + Mathf.Pow(vector.y, 2));
-
-        vector.x = (vector.x/modulo)*speed; // Hacemos que el vector sea unitario para quedarnos sólo con la dirección en la que queremos disparar
-        vector.y = (vector.y/modulo)*speed; // Lo multiplicamos por speed para añadirle la velocidad deseada
+        vector.x = (vector.x)*speed; // Hacemos que el vector sea unitario para quedarnos sólo con la dirección en la que queremos disparar
+        vector.y = (vector.y)*speed; // Lo multiplicamos por speed para añadirle la velocidad deseada
 
         GetComponent<Rigidbody2D>().velocity=vector; // Aplicamos el vector resultante a la velocidad del objeto
         initTime = Time.time;
@@ -51,6 +47,32 @@ public class ShotBehaviour : MonoBehaviour {
             rebote = true;
         }
 
+        if (collision.gameObject.tag == "Boss1" && rebote)
+        {
+            if (collision.gameObject.GetComponent<Boss1Behaviour>().bossHP>0)
+            {
+                collision.gameObject.GetComponent<Boss1Behaviour>().bossHP--;
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+                GameObject[] aux = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < aux.Length; i++)
+                {
+                    Destroy(aux[i]);
+                }
+                GameObject[] aux2 = GameObject.FindGameObjectsWithTag("Shot");
+                for (int i = 0; i < aux2.Length; i++)
+                {
+                    Destroy(aux2[i]);
+                }
+            }
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Enemy" && rebote)
         {
             Destroy(collision.gameObject);
