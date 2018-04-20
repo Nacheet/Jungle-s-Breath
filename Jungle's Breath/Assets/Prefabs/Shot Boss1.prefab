@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 50930681869052808}
   - component: {fileID: 58901806302709838}
   - component: {fileID: 114380962278775094}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Shot Boss1
-  m_TagString: Shot
+  m_TagString: ShotBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050cc5bf0aa7c814f909734adb502654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   vector: {x: 0, y: 0}
-  deathTime: 2
+  deathTime: 5
+  deadlyTime: 0.1
   rebote: 0
 --- !u!212 &212445632623815854
 SpriteRenderer:

@@ -290,6 +290,7 @@
     <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript2.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotBehaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy\Stalactite\Stalactite.cs" />
     <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />
