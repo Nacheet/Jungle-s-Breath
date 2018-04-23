@@ -7,7 +7,6 @@ public class ShotBehaviour : MonoBehaviour {
     public float speed;
     public Vector2 vector;
     public float deathTime = 0.5f;
-    public float deadlyTime = 0.5f;
     private GameObject player;
     private GameObject shield;
     private float initTime;
@@ -48,13 +47,7 @@ public class ShotBehaviour : MonoBehaviour {
             rebote = true;
         }
 
-        if (collision.gameObject.tag == "Enemy" && Time.time-initTime>deadlyTime)
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-
-        if (collision.gameObject.tag == "Boss1" && rebote && gameObject.tag=="ShotBoss")
+        if (collision.gameObject.tag == "Boss1" && rebote)
         {
             if (collision.gameObject.GetComponent<Boss1Behaviour>().bossHP>0)
             {

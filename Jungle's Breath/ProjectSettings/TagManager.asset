@@ -7,9 +7,6 @@ TagManager:
   - Enemy
   - Shield
   - Ground
-  - Boss1
-  - Shot
-  - ShotBoss
   layers:
   - Default
   - TransparentFX
@@ -23,11 +20,11 @@ TagManager:
   - Floor
   - Shield
   - Floating Floor
-  - Shot
-  - Shot3
-  - Enemy
-  - Enemy2
-  - WallPlayer
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

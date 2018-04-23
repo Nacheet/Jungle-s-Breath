@@ -34,6 +34,7 @@ public class Stalactite : MonoBehaviour {
         else if (coll.collider.gameObject.tag == "Shield")
         {
             hitShield = true;
+            Destroy(gameObject, destroyTime);
         }
         else if (coll.collider.gameObject.tag == "Ground")
         {

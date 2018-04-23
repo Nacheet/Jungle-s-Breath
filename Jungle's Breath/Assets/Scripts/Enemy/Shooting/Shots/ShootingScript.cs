@@ -12,8 +12,7 @@ public class ShootingScript : MonoBehaviour {
     public Vector2 auxVector;
     public float detectionDistance = 10;
     public float fireRate = 1.0f;
-    public float initShot = 0.0f;
-    private float nextShot;
+    private float nextShot = 0.0f;
     public float modulo;
 
     private 
@@ -22,7 +21,6 @@ public class ShootingScript : MonoBehaviour {
     // Use this for initialization
     void Start() {
         shootingTarget = GameObject.Find("Player");
-        nextShot = Time.time + initShot;
     }
 
 

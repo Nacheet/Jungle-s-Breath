@@ -9,6 +9,7 @@ public class ShowOrHideGameObject : MonoBehaviour {
 
     public GameObject go;
 
+
     public void hideGo()
     {
         go.SetActive  (false);
@@ -19,10 +20,12 @@ public class ShowOrHideGameObject : MonoBehaviour {
         go.SetActive(true);
     }
 
-
-    void Update()
+    public void Start()
     {
-        if (show)
+
+        if(show)
+        {
             showGo();
+        }
     }
 }
