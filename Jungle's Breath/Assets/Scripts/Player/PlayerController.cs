@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 
-public class PlayerController: MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     private GameObject player;
-    public GameObject Menu;
+    public Animator animator;
 
     //Variables moviment
     public bool grounded;
     public LayerMask whatIsFloor, whatIsGround;
     public Transform groundCheckL, groundCheckR;
     public float maxSpeed = 17;
-    public bool groundedL= false, groundedR = false;
+    public bool groundedL = false, groundedR = false;
     public bool movingRight, movingLeft;
+    public bool notMoving;
 
     //Variables salt
     public float jumpVelocity = 19.0f;
@@ -39,18 +41,32 @@ public class PlayerController: MonoBehaviour {
     public float attDuration = 1.5f;
     public float lastAttDone;
 
-    void Start ()
+    void Start()
     {
         player = GameObject.Find("Player");
         GetComponent<Rigidbody2D>().gravityScale = minGravity;
         maxSpeedCopy = maxSpeed;
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
+
+        if(grounded)
+        {
+            if(notMoving)
+            {
+                animator.SetBool("notMov", true);
+            }
+            else
+            {
+                animator.SetBool("notMov", false);
+            }
+        }
+
+
         //Comprova si esta al terra
-        groundedL= Physics2D.Linecast(player.transform.position, groundCheckL.position, whatIsGround);
+        groundedL = Physics2D.Linecast(player.transform.position, groundCheckL.position, whatIsGround);
         groundedR = Physics2D.Linecast(player.transform.position, groundCheckR.position, whatIsGround);
         //Comprova si esta tocant la paret dreta o esquerra
         slidingR = Physics2D.Linecast(player.transform.position, playerRight.position, whatIsFloor);
@@ -58,9 +74,15 @@ public class PlayerController: MonoBehaviour {
 
         //Grounded
         if (groundedL || groundedR)
+        {
             grounded = true;
+            animator.SetBool("grounded", true);
+        }
         else
+        {
+            animator.SetBool("grounded", false);
             grounded = false;
+        }
 
 
         //Moviment lateral
@@ -71,16 +93,23 @@ public class PlayerController: MonoBehaviour {
         {
             movingLeft = true;
             movingRight = false;
+            notMoving = false;
         }
         else if (GetComponent<Rigidbody2D>().velocity.x > 0)
         {
             movingRight = true;
             movingLeft = false;
+            notMoving = false;
         }
+        else
+            notMoving = true;
 
         //Salt
         if (Input.GetButtonDown("Jump"))
+        {
             jump(groundedL, groundedR);
+            animator.SetTrigger("jump");
+        }
         if (GetComponent<Rigidbody2D>().velocity.y < 0)
         {
             GetComponent<Rigidbody2D>().gravityScale = maxGravity;
@@ -131,11 +160,13 @@ public class PlayerController: MonoBehaviour {
             }
             else
                 usingShield = true;
+            animator.SetBool("usingShield", true);
         }
         else
         {
             usingShield = false;
             GetComponent<PlayerController>().maxSpeed = maxSpeedCopy;
+            animator.SetBool("usingShield", false);
         }
 
         //Atac amb l'escut
@@ -146,26 +177,21 @@ public class PlayerController: MonoBehaviour {
             canAtt = false;
 
 
-        if(Input.GetButtonDown("Fire2") && canAtt)
+        if (Input.GetButtonDown("Fire2") && canAtt)
         {
             shieldAtt = true;
             lastAttDone = Time.time;
             nextAtt = Time.time + attCoolDown + attDuration;
         }
 
-        if (lastAttDone + attDuration  >= Time.time && shieldAtt)
+        if (lastAttDone + attDuration >= Time.time && shieldAtt)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, 0);
         }
         else
             shieldAtt = false;
 
-        if (Input.GetButtonDown("Cancel")) {
-            bool itisactive;
-            itisactive = Menu.activeSelf;
-            Menu.SetActive(!itisactive);
-        }
-        
+
     }
 
     private void move(float input)
@@ -178,12 +204,12 @@ public class PlayerController: MonoBehaviour {
         movement.x = input * maxSpeed; //Es modifica la velocitat de movement en el eix de les x tal que moviment rebut (input) * maxSpeed = M
         GetComponent<Rigidbody2D>().velocity = movement; //La velocitat modificada s'aplica al GameObject, en aquest cas només modifica el eix de les x [(M,0)]
 
-        if(falling && jumpL && GetComponent<Rigidbody2D>().velocity.x == 0)
+        if (falling && jumpL && GetComponent<Rigidbody2D>().velocity.x == 0)
         {
             movement.x += maxSpeed / -3;
             GetComponent<Rigidbody2D>().velocity = movement;
         }
-        if(falling && jumpR && GetComponent<Rigidbody2D>().velocity.x == 0)
+        if (falling && jumpR && GetComponent<Rigidbody2D>().velocity.x == 0)
         {
             movement.x += maxSpeed / 3;
             GetComponent<Rigidbody2D>().velocity = movement;
@@ -192,13 +218,13 @@ public class PlayerController: MonoBehaviour {
 
     private void jump(bool groundedL, bool groundedR)
     {
-        if (groundedR || groundedL)
+        if (grounded)
         {
             GetComponent<Rigidbody2D>().velocity += jumpVelocity * Vector2.up; //Vector2.up = (0,1) Per tant, x*0 = 0 i x*1 = x [(0,x)]
         }
-    } 
+    }
 }
 
-   
+
 
 
