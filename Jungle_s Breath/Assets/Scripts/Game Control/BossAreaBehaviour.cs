@@ -8,6 +8,7 @@ public class BossAreaBehaviour : MonoBehaviour {
     public GameObject mainCamera;
     public GameObject bossCamera;
     public GameObject boss1;
+    public bool bossActivated= false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +22,11 @@ public class BossAreaBehaviour : MonoBehaviour {
             GameObject.Find("Player").GetComponent<CameraAproach>().camera1 = actualCamera;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera2 = bossCamera;
 
-            Instantiate<GameObject>(boss1);
+            if (!bossActivated)
+            {
+                Instantiate<GameObject>(boss1);
+                bossActivated = true;
+            }
 
         }
 

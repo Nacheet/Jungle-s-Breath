@@ -62,7 +62,7 @@ public class Death : MonoBehaviour
     {
         shieldCol = shield.GetComponent<ShieldHitDetector>().shieldCol;
 
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss" || collision.gameObject.tag == "Water")
         {
             playerCol = true;
             time = Time.time;

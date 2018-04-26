@@ -7,13 +7,12 @@ public class ShotBehaviour : MonoBehaviour {
     public float speed;
     public Vector2 vector;
     public float deathTime = 0.5f;
+    public float deadlyTime = 0.5f;
     private GameObject player;
     private GameObject shield;
     private float initTime;
     private float modulo;
     public bool rebote = false;
-
-
 
 
     // Use this for initialization
@@ -26,7 +25,6 @@ public class ShotBehaviour : MonoBehaviour {
 
         GetComponent<Rigidbody2D>().velocity=vector; // Aplicamos el vector resultante a la velocidad del objeto
         initTime = Time.time;
-
 	}
 
     private void Update()
@@ -45,12 +43,24 @@ public class ShotBehaviour : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.layer == 9) // quan choca amb el terra
+        {
+            Destroy(gameObject);
+        }
+
+
         if (collision.collider == shield.GetComponent<Collider2D>())
         {
             rebote = true;
         }
 
-        if (collision.gameObject.tag == "Boss1" && rebote)
+        if (collision.gameObject.tag == "Enemy" && Time.time-initTime>deadlyTime)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Boss1" && rebote && gameObject.tag=="ShotBoss")
         {
             if (collision.gameObject.GetComponent<Boss1Behaviour>().bossHP>0)
             {
@@ -58,7 +68,6 @@ public class ShotBehaviour : MonoBehaviour {
             }
             else
             {
-                Destroy(collision.gameObject);
                 GameObject[] aux = GameObject.FindGameObjectsWithTag("Enemy");
                 for (int i = 0; i < aux.Length; i++)
                 {
@@ -69,6 +78,8 @@ public class ShotBehaviour : MonoBehaviour {
                 {
                     Destroy(aux2[i]);
                 }
+                collision.gameObject.GetComponent<Boss1Behaviour>().nextDieTime = Time.time;
+                collision.gameObject.GetComponent<Boss1Behaviour>().dead = true;
             }
             Destroy(gameObject);
         }

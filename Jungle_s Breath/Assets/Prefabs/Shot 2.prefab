@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212446696161687458}
   - component: {fileID: 50575707227574088}
   - component: {fileID: 58573304699324420}
-  - component: {fileID: 114341793446976368}
-  m_Layer: 12
+  - component: {fileID: 114860320986728394}
+  m_Layer: 14
   m_Name: Shot 2
   m_TagString: Shot
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.085099794
---- !u!114 &114341793446976368
+--- !u!114 &114860320986728394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,12 +86,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895604420441114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050cc5bf0aa7c814f909734adb502654, type: 3}
+  m_Script: {fileID: 11500000, guid: 6058519b82a5aaa42bb05b0c809d4489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
   vector: {x: 0, y: 0}
   deathTime: 10
+  deadlyTime: 0
   rebote: 0
 --- !u!212 &212446696161687458
 SpriteRenderer:

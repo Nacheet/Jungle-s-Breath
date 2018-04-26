@@ -8,8 +8,8 @@ public class CameraAproach : MonoBehaviour {
     public GameObject camera1;
     public GameObject camera2;
 
-    public float speedPos = 1;
-    public float speedSize = 0.01f;
+    public float speedPos = 10;
+    public float speedSize = 0.086f;
 
 
     // Use this for initialization

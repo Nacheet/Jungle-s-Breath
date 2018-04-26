@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript2.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\Stalactite\Stalactite.cs" />
      <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />
@@ -69,8 +70,10 @@
      <Compile Include="Assets\Scripts\Menu\NEW MENU\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\NEW MENU\SettingsMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\SelectWithInput.cs" />
+     <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player\Death.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Player\Respawn.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldHitDetector.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Tutorials.cs" />

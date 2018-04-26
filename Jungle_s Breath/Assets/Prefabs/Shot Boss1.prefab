@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212445632623815854}
   - component: {fileID: 50930681869052808}
   - component: {fileID: 58901806302709838}
-  - component: {fileID: 114380962278775094}
-  m_Layer: 12
+  - component: {fileID: 114662121376360902}
+  m_Layer: 15
   m_Name: Shot Boss1
-  m_TagString: Shot
+  m_TagString: ShotBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.085099794
---- !u!114 &114380962278775094
+--- !u!114 &114662121376360902
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,12 +86,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923736398105372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050cc5bf0aa7c814f909734adb502654, type: 3}
+  m_Script: {fileID: 11500000, guid: 6058519b82a5aaa42bb05b0c809d4489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   vector: {x: 0, y: 0}
-  deathTime: 2
+  deathTime: 5
+  deadlyTime: 0
   rebote: 0
 --- !u!212 &212445632623815854
 SpriteRenderer:

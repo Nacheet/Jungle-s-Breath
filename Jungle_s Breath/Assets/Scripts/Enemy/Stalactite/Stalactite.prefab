@@ -66,9 +66,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149683859968778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.83, y: -109.3, z: 0.15431263}
-  m_LocalScale: {x: 4.7565327, y: 5.731326, z: 1}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.23, y: -36.605904, z: 0.9668126}
+  m_LocalScale: {x: -2.2443566, y: 1.8259734, z: 1}
   m_Children:
   - {fileID: 4650549895835998}
   m_Father: {fileID: 0}
@@ -106,18 +106,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07674479, y: -0.14698172}
+  m_Offset: {x: 0.0029647406, y: -0.13107166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.63}
+    oldSize: {x: 0.18, y: 0.58}
     newSize: {x: 0.32, y: 0.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4971046, y: 0.33603656}
+  m_Size: {x: 0.10619967, y: 0.30421644}
   m_EdgeRadius: 0
 --- !u!61 &61531064428693320
 BoxCollider2D:
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059034377, y: -0.74470615}
+  m_Offset: {x: -0.009470716, y: -0.5582253}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -142,7 +142,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1180687, y: 2.489412}
+  m_Size: {x: 0.47215864, y: 2.1164503}
   m_EdgeRadius: 0
 --- !u!114 &114593229549666240
 MonoBehaviour:
@@ -207,10 +207,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300012, guid: 27c26c60d5cd5cc4ab30c24394b9e8c0, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300002, guid: 83732afa219e81f4789325828a8320c9, type: 3}
+  m_Color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.63}
   m_AdaptiveModeThreshold: 0.5

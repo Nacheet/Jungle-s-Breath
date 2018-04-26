@@ -23,7 +23,7 @@ public class ShieldHitDetector : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if(collision.gameObject.tag == "Shot")
+        if(collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss" || collision.gameObject.tag == "Water")
         {
             shieldCol = true;
             time = Time.time;
