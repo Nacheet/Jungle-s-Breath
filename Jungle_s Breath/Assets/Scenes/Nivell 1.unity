@@ -15510,30 +15510,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985facee3213c54bbab8b6246963564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor:
+    serializedVersion: 2
+    m_Bits: 0
   animator: {fileID: 490863483}
-  grounded: 0
-  whatIsFloor:
-    serializedVersion: 2
-    m_Bits: 512
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 2560
-  groundCheckL: {fileID: 197804410}
-  groundCheckR: {fileID: 1754558751}
-  maxSpeed: 22
-  groundedL: 0
-  groundedR: 0
+  onTheGround: 0
+  jumpSpeed: 0
+  falling: 0
   movingRight: 0
-  movingLeft: 0
-  notMoving: 0
-  jumpVelocity: 35
-  maxGravity: 10
-  minGravity: 10
-  playerRight: {fileID: 2117809486}
-  playerLeft: {fileID: 2031545371}
-  slidingL: 0
-  slidingR: 0
-  slidingGravity: 2
+  slidingVelocity: 0
+  enableJump: 0
+  enableDoubleJump: 1
+  wallHit: 0
+  wallHitDirection: 0
+  wallJumped: 0
+  wallJumpTime: 0
+  timeToMoveAfterJumping: 0
   usingShield: 0
   shieldDefault: 0
   newSpeed: 9
@@ -58911,6 +58903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7421d34196ef5c242b15fce9639e5593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: {fileID: 1809392214}
   animator: {fileID: 490863483}
   whatIsGround:
     serializedVersion: 2

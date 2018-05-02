@@ -1,40 +1,44 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     private GameObject player;
+    private SpriteRenderer rend;
+    public LayerMask floor;
     public Animator animator;
-    private SpriteRenderer playerSprite;
 
-    //Variables moviment
-    public bool grounded;
-    public LayerMask whatIsFloor, whatIsGround;
-    public Transform groundCheckL, groundCheckR;
-    public float maxSpeed = 17;
-    public bool groundedL = false, groundedR = false;
-    public bool movingRight, movingLeft;
-    public bool notMoving;
+    //LateralMovement
+    public bool onTheGround = false;
+    private float maxSpeed = 14;
+    public float jumpSpeed;
+    private float normalJumpSpeed = 35;
+    private float doubleJumpSpeed;
+    public bool falling;
+    public bool movingRight;
+    private float normalGravity = 10, fallingGravity = 11.5f;
+    public float slidingVelocity;
 
-    //Variables salt
-    public float jumpVelocity = 19.0f;
-    public float maxGravity = 7.0f, minGravity = 3.5f;
-    private bool falling;
-    //Variables salt paret
-    public Transform playerRight, playerLeft;
-    public bool slidingL, slidingR;
-    private bool wallJumping, jumpR, jumpL;
-    private const float jumpXCap = 0.8f;
-    public float slidingGravity = 2.0f;
+    //Jump
+    public bool enableJump;
+    public bool enableDoubleJump = true;
 
-    ////Moviment del escut
+    //WallJump
+    private bool leftWallHit = false, rightWallHit = false;
+    public bool wallHit = false;
+    public int wallHitDirection = 0;
+    public bool wallJumped = false;
+    public float wallJumpTime;
+    public float timeToMoveAfterJumping;
+
+    //Shield
     public bool usingShield;
     public bool shieldDefault;
-    //Variables del moviment del escut
+    //ShieldMovement
     public float newSpeed;
     private float maxSpeedCopy;
-
-    //Variables del atac
+    //ShieldAttack
     public bool shieldAtt, canAtt;
     public float attSpeed;
     public float attCoolDown = 4.0f;
@@ -42,164 +46,144 @@ public class PlayerController : MonoBehaviour
     public float attDuration = 1.5f;
     public float lastAttDone;
 
-
-    //Mort del player
+    //GameControl
     public bool dead;
+
 
     void Start()
     {
+        rend = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player");
-        GetComponent<Rigidbody2D>().gravityScale = minGravity;
+        doubleJumpSpeed = normalJumpSpeed * 3 / 4;
         maxSpeedCopy = maxSpeed;
-
-        playerSprite = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        float horizontal;
+        float vertical = Input.GetAxis("Jump");
+        onTheGround = isOnGround();
         dead = player.GetComponent<Death>().dead;
 
-        if(dead)
-        {
-            Vector2 nullMov = player.GetComponent<Rigidbody2D>().velocity * 0;
-            player.GetComponent<Rigidbody2D>().velocity = nullMov;
-        }
-
-
-        if(grounded)
-        {
-            if(notMoving)
-            {
-                animator.SetBool("notMov", true);
-            }
-            else
-            {
-                animator.SetBool("notMov", false);
-            }
-        }
-
-
-        //Comprova si esta al terra
-        groundedL = Physics2D.Linecast(player.transform.position, groundCheckL.position, whatIsGround);
-        groundedR = Physics2D.Linecast(player.transform.position, groundCheckR.position, whatIsGround);
-        //Comprova si esta tocant la paret dreta o esquerra
-        slidingR = Physics2D.Linecast(player.transform.position, playerRight.position, whatIsFloor);
-        slidingL = Physics2D.Linecast(player.transform.position, playerLeft.position, whatIsFloor);
-
-        //Grounded
-        if (groundedL || groundedR)
-        {
-            grounded = true;
-            animator.SetBool("grounded", true);
-        }
+        if ((leftWallHit || rightWallHit) && !onTheGround)
+            horizontal = 0;
         else
+            horizontal = Input.GetAxis("Horizontal");
+
+        if (player.GetComponent<Rigidbody2D>().velocity.x == 0)
         {
-            animator.SetBool("grounded", false);
-            grounded = false;
+            animator.SetTrigger("notMoving");
+            animator.SetBool("moving", false);
         }
-
-
-        //Moviment lateral
-        move(Input.GetAxis("Horizontal"));
-
-        //Per saber si el jugador es mou cap a la dreta o cap a la esquerra
-        if (GetComponent<Rigidbody2D>().velocity.x < 0)
-        {
-            movingLeft = true;
-            movingRight = false;
-            notMoving = false;
-        }
-        else if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        else if (player.GetComponent<Rigidbody2D>().velocity.x > 0)
         {
             movingRight = true;
-            movingLeft = false;
-            notMoving = false;
+            rend.flipX = false;
+            animator.SetBool("moving", true);
         }
         else
-            notMoving = true;
-
-        if(movingLeft)
         {
-            playerSprite.flipX = true;
+            movingRight = false;
+            rend.flipX = true;
+            animator.SetBool("moving", true);
         }
-        else if(movingRight)
-        {
-            playerSprite.flipX = false;
-        }
-            
 
-        //Salt
+        if (onTheGround)
+        {
+            enableJump = true;
+            enableDoubleJump = true;
+            jumpSpeed = normalJumpSpeed;
+        }
+        else if (!onTheGround && enableDoubleJump)
+        {
+            jumpSpeed = doubleJumpSpeed;
+        }
+
+        leftWallHit = isOnWallLeft();
+        rightWallHit = isOnWallRight();
+        if (leftWallHit)
+        {
+            wallHit = true;
+            wallHitDirection = 1;
+        }
+        else if (rightWallHit)
+        {
+            wallHit = true;
+            wallHitDirection = -1;
+        }
+        else
+        {
+            wallHit = false;
+            wallHitDirection = 0;
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
-            jump(groundedL, groundedR);
+            if (onTheGround)
+            {
+                jump();
+            }
+            else if (wallHit)
+            {
+                wallJumped = true;
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed * wallHitDirection, normalJumpSpeed);
+                wallJumpTime = Time.time;
+            }
+            else if (enableDoubleJump)
+            {
+                jump();
+                enableDoubleJump = false;
+            }
         }
-        if (GetComponent<Rigidbody2D>().velocity.y < 0)
-        {
-            GetComponent<Rigidbody2D>().gravityScale = maxGravity;
+
+        if (Time.time > wallJumpTime + timeToMoveAfterJumping && wallJumped)
+            wallJumped = false;
+
+        if (!wallJumped)
+            move(horizontal);
+
+        if (player.GetComponent<Rigidbody2D>().velocity.y < 0)
             falling = true;
-        }
         else
-        {
-            GetComponent<Rigidbody2D>().gravityScale = minGravity;
             falling = false;
-        }
 
-        //Salt desde la paret
-        if (slidingL && !groundedL && !groundedR && Input.GetButtonDown("Jump"))
-        {
-            float xSpeed = maxSpeed * jumpXCap;
-            wallJumping = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed, jumpVelocity);
-            jumpR = true;
+        if ((leftWallHit || rightWallHit) && falling)
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, slidingVelocity);
+        else if (falling)
+            player.GetComponent<Rigidbody2D>().gravityScale = fallingGravity;
+        else
+            player.GetComponent<Rigidbody2D>().gravityScale = normalGravity;
 
-        }
 
-        if (slidingR && !groundedL && !groundedR && Input.GetButtonDown("Jump"))
-        {
-            float xSpeed = -maxSpeed * jumpXCap;
-            wallJumping = true;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(xSpeed, jumpVelocity);
-            jumpL = true;
 
-        }
-
-        if ((wallJumping) && GetComponent<Rigidbody2D>().velocity.y < 0)
-            wallJumping = false;
-        if (groundedR || groundedL || slidingR)
-            jumpR = false;
-        if (groundedR || groundedL || slidingL)
-            jumpL = false;
-
-        if ((slidingL || slidingR) && falling)
-            GetComponent<Rigidbody2D>().gravityScale = slidingGravity;
-
-        //Posicio del escut
+        //Shield
         if (Input.GetButton("Fire1"))
         {
-            if (groundedR || groundedL)
+            if (onTheGround)
             {
-                GetComponent<PlayerController>().maxSpeed = newSpeed;
+                maxSpeed = newSpeed;
                 usingShield = true;
+                animator.SetBool("usingShield", true);
             }
             else
+            {
                 usingShield = true;
-            animator.SetBool("usingShield", true);
+                animator.SetBool("usingShield", true);
+            }
+
         }
         else
         {
             usingShield = false;
-            GetComponent<PlayerController>().maxSpeed = maxSpeedCopy;
+            maxSpeed = maxSpeedCopy;
             animator.SetBool("usingShield", false);
         }
 
-        //Atac amb l'escut
-
-        if (Time.time > nextAtt && grounded && usingShield)
+        //ShieldAttack
+        if (Time.time > nextAtt && onTheGround && usingShield)
             canAtt = true;
         else
             canAtt = false;
-
 
         if (Input.GetButtonDown("Fire2") && canAtt)
         {
@@ -207,49 +191,83 @@ public class PlayerController : MonoBehaviour
             lastAttDone = Time.time;
             nextAtt = Time.time + attCoolDown + attDuration;
         }
-
         if (lastAttDone + attDuration >= Time.time && shieldAtt)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, 0);
-        }
+            GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
         else
             shieldAtt = false;
-
-
     }
+
+
 
     private void move(float input)
     {
-        if (wallJumping || dead)
+        if (dead)
             return;
-
-
-        Vector2 movement = GetComponent<Rigidbody2D>().velocity;
-        movement.x = input * maxSpeed; //Es modifica la velocitat de movement en el eix de les x tal que moviment rebut (input) * maxSpeed = M
-        GetComponent<Rigidbody2D>().velocity = movement; //La velocitat modificada s'aplica al GameObject, en aquest cas només modifica el eix de les x [(M,0)]
-
-        if (falling && jumpL && GetComponent<Rigidbody2D>().velocity.x == 0)
-        {
-            movement.x += maxSpeed / -3;
-            GetComponent<Rigidbody2D>().velocity = movement;
-        }
-        if (falling && jumpR && GetComponent<Rigidbody2D>().velocity.x == 0)
-        {
-            movement.x += maxSpeed / 3;
-            GetComponent<Rigidbody2D>().velocity = movement;
-        }
+        GetComponent<Rigidbody2D>().velocity = new Vector2(input * maxSpeed, player.GetComponent<Rigidbody2D>().velocity.y);
     }
 
-    private void jump(bool groundedL, bool groundedR)
+    private bool isOnGround()
     {
-        if (grounded && !dead)
-        {
-            GetComponent<Rigidbody2D>().velocity += jumpVelocity * Vector2.up; //Vector2.up = (0,1) Per tant, x*0 = 0 i x*1 = x [(0,x)]
-            animator.SetTrigger("jump");
-        }
+        float lenghtToSearch = 0.1f;
+        float colliderLimit = 0.001f;
+
+        Vector2 lineStart = new Vector2(this.transform.position.x, this.transform.position.y - rend.bounds.extents.y - colliderLimit);
+
+        Vector2 vectorToSearch = new Vector2(this.transform.position.x, lineStart.y - lenghtToSearch);
+        RaycastHit2D hit = Physics2D.Linecast(lineStart, vectorToSearch, floor);
+
+        return hit;
+    }
+
+
+    private bool isOnWallLeft()
+    {
+        bool retVal = false;
+
+        float lenghtToSearch = 0.1f;
+        float colliderLimit = 0.01f;
+
+        Vector2 lineStart = new Vector2(this.transform.position.x - rend.bounds.extents.x - colliderLimit, this.transform.position.y);
+
+        Vector2 vectorToSearch = new Vector2(lineStart.x - lenghtToSearch, this.transform.position.y);
+
+        RaycastHit2D hitLeft = Physics2D.Linecast(lineStart, vectorToSearch, floor);
+
+        retVal = hitLeft;
+
+
+        if (retVal)
+            if (hitLeft.collider.gameObject.tag == "No Slide Wall")
+                return false;
+        return retVal;
+    }
+
+
+    private bool isOnWallRight()
+    {
+        bool retVal = false;
+
+        float lenghtToSearch = 0.1f;
+        float colliderLimit = 0.01f;
+
+        Vector2 lineStart = new Vector2(this.transform.position.x + rend.bounds.extents.x + colliderLimit, this.transform.position.y);
+
+        Vector2 vectorToSearch = new Vector2(lineStart.x + lenghtToSearch, this.transform.position.y);
+
+        RaycastHit2D hitRight = Physics2D.Linecast(lineStart, vectorToSearch, floor);
+
+        retVal = hitRight;
+
+        if (retVal)
+            if (hitRight.collider.gameObject.tag == "No Slide Wall")
+                return false;
+        return retVal;
+    }
+
+
+    private void jump()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, this.jumpSpeed);
+        animator.SetTrigger("jump");
     }
 }
-
-
-
-

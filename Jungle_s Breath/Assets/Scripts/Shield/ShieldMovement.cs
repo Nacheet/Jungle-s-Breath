@@ -5,11 +5,11 @@ using UnityEngine;
 public class ShieldMovement : MonoBehaviour
 {
 
-    GameObject shield;
+    public GameObject shield;
     public Animator animator;
 
-    private bool groundedL, groundedR;
-    private bool movingRight, movingLeft;
+    private bool onTheGround;
+    private bool movingRight;
     public LayerMask whatIsGround;
     public bool shieldGroundedR, shieldGroundedL;
     public Transform shieldGroundR, shieldGroundL;
@@ -30,7 +30,6 @@ public class ShieldMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        shield = GameObject.Find("Shield");
         shieldPos = new bool[numberOfPositions];
         shield.transform.position = shieldDefaultR.position;
 
@@ -48,25 +47,23 @@ public class ShieldMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        groundedL = GameObject.Find("Player").GetComponent<PlayerController>().groundedL;
-        groundedR = GameObject.Find("Player").GetComponent<PlayerController>().groundedR;
+        onTheGround = GameObject.Find("Player").GetComponent<PlayerController>().onTheGround;
         movingRight = GameObject.Find("Player").GetComponent<PlayerController>().movingRight;
-        movingLeft = GameObject.Find("Player").GetComponent<PlayerController>().movingLeft;
         shieldGroundedR = Physics2D.Linecast(shield.transform.position, shieldGroundR.transform.position, whatIsGround);
         shieldGroundedL = Physics2D.Linecast(shield.transform.position, shieldGroundL.transform.position, whatIsGround);
 
         usingShield = GameObject.Find("Player").GetComponent<PlayerController>().usingShield;
 
-        shieldPositionChange(usingShield, movingRight, movingLeft, groundedR, groundedL, shieldPos);
+        shieldPositionChange(usingShield, movingRight, onTheGround, shieldPos);
         shieldPosition(shieldPos);
 
     }
 
 
-    void shieldPositionChange(bool usingShield, bool movingRight, bool movingLeft, bool groundedR, bool groundedL, bool[] shieldPos)
+    void shieldPositionChange(bool usingShield, bool movingRight, bool _onTheGround, bool[] shieldPos)
     {
         //shieldPos = shieldDefaultR, shieldDefaultL, shieldRight, shieldLeft, shieldUp, shieldDown
-        if (usingShield && (groundedR || groundedL))
+        if (usingShield && _onTheGround)
         {
             shieldPos[0] = false; //shieldDefaultR
             shieldPos[1] = false; //shieldDefaultL
@@ -76,7 +73,7 @@ public class ShieldMovement : MonoBehaviour
             else
                 shieldPos[2] = false; //shieldRight
 
-            if (movingLeft)
+            if (!movingRight)
                 shieldPos[3] = true; //shieldLeft
             else
                 shieldPos[3] = false; //shieldLeft
@@ -97,21 +94,21 @@ public class ShieldMovement : MonoBehaviour
             if (Input.GetAxisRaw("Vertical") == -1)
             {
                 shieldPos[5] = false; //shieldDown
-                if(movingLeft)
+                if (!movingRight)
                     shieldPos[3] = true; //shieldLeft
-                else if(movingRight)
+                else if (movingRight)
                     shieldPos[2] = true; //shieldRight
             }
 
         }
-        else if (usingShield && !groundedL && !groundedR)
+        else if (usingShield && !onTheGround)
         {
             if (movingRight)
                 shieldPos[2] = true; //shieldRight
             else
                 shieldPos[2] = false; //shieldRight
 
-            if (movingLeft)
+            if (!movingRight)
                 shieldPos[3] = true; //shieldLeft
             else
                 shieldPos[3] = false; //shieldLeft
@@ -142,17 +139,17 @@ public class ShieldMovement : MonoBehaviour
 
             if (Input.GetAxisRaw("Vertical") == -1)//&& !shieldGroundedL && !shieldGroundedR)
             {
-              
+
                 shieldPos[5] = true; //shieldDown
             }
             else
             {
-                if(movingRight)
+                if (movingRight)
                 {
                     shieldPos[0] = true; //shieldDefaultR
                     shieldPos[1] = false; //shieldDefaultL
                 }
-                else if (movingLeft)
+                else if (!movingRight)
                 {
                     shieldPos[1] = true; //shieldDefaultL
                     shieldPos[0] = false; //shieldDefaultR
@@ -177,7 +174,7 @@ public class ShieldMovement : MonoBehaviour
                 shieldPos[1] = false; //shieldDefaultL
             }
 
-            else if (movingLeft)
+            else if (!movingRight)
             {
                 shieldPos[1] = true; //shieldDefaultL
                 shieldPos[0] = false; //shieldDefaultR
@@ -195,7 +192,7 @@ public class ShieldMovement : MonoBehaviour
             shield.transform.position = shieldDefaultR.position;
             shield.transform.localScale = new Vector2(XHor, YHor);
         }
-        if(shieldPos[1]) //shieldDefaultL
+        if (shieldPos[1]) //shieldDefaultL
         {
             shield.transform.position = shieldDefaultL.position;
             shield.transform.localScale = new Vector2(XHor, YHor);
@@ -222,3 +219,4 @@ public class ShieldMovement : MonoBehaviour
         }
     }
 }
+
