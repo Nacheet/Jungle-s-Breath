@@ -6,6 +6,7 @@ public class Death : MonoBehaviour
 {
     public bool teleport;
     public bool fadeIn = false;
+    private GameObject player;
     public GameObject shield;
 
     public Transform teleportPos;
@@ -71,6 +72,7 @@ public class Death : MonoBehaviour
     void Start()
     {
         FadeOut();
+        player = GameObject.Find("Player");
         dead = false;
     }
 

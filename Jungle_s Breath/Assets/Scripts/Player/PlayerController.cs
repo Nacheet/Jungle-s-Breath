@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //LateralMovement
     public bool onTheGround = false;
     private float maxSpeed = 14;
-    private float jumpSpeed;
+    public float jumpSpeed;
     private float normalJumpSpeed = 35;
     private float doubleJumpSpeed;
     public bool falling;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public bool enableDoubleJump = true;
 
     //WallJump
-    public bool leftWallHit = false, rightWallHit = false;
+    private bool leftWallHit = false, rightWallHit = false;
     public bool wallHit = false;
     public int wallHitDirection = 0;
     public bool wallJumped = false;
@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player");
-        jumpSpeed = normalJumpSpeed;
         doubleJumpSpeed = normalJumpSpeed * 3 / 4;
         maxSpeedCopy = maxSpeed;
     }
@@ -62,6 +61,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float horizontal;
+        float vertical = Input.GetAxis("Jump");
         onTheGround = isOnGround();
         dead = player.GetComponent<Death>().dead;
 
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
         if (player.GetComponent<Rigidbody2D>().velocity.x == 0)
         {
+            animator.SetTrigger("notMoving");
             animator.SetBool("moving", false);
         }
         else if (player.GetComponent<Rigidbody2D>().velocity.x > 0)
@@ -194,16 +195,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
         else
             shieldAtt = false;
-
-        if (onTheGround)
-            animator.SetBool("onTheGround", true);
-        else
-            animator.SetBool("onTheGround", false);
-
-        if (leftWallHit || rightWallHit)
-            animator.SetBool("wallCollision", true);
-        else
-            animator.SetBool("wallCollision", false);
     }
 
 

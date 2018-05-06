@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Dust.cs" />
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
@@ -62,13 +61,15 @@
      <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />
      <Compile Include="Assets\Scripts\Game Control\BossAreaBehaviour.cs" />
      <Compile Include="Assets\Scripts\Game Control\CameraAproach.cs" />
-     <Compile Include="Assets\Scripts\Game Control\FadeCollider.cs" />
+     <Compile Include="Assets\Scripts\Game Control\Fade.cs" />
      <Compile Include="Assets\Scripts\Game Control\MusicChanger.cs" />
      <Compile Include="Assets\Scripts\Game Control\ShowOrHideGameObject.cs" />
-     <Compile Include="Assets\Scripts\Menu\firstMenu.cs" />
-     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
-     <Compile Include="Assets\Scripts\Menu\SettingsMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\ChangeScreen.cs" />
+     <Compile Include="Assets\Scripts\Menu\ExitGame.cs" />
+     <Compile Include="Assets\Scripts\Menu\NEW MENU\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\NEW MENU\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\NEW MENU\SettingsMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\SelectWithInput.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player\Death.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
