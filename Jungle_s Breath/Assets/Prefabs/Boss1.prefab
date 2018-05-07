@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHP: 10
   spawnNow: 0
-  enemyGenerate: {fileID: 1997105477985676, guid: 5ae44b6b7e60b7d4e93b9716ffe75062,
+  enemyGenerate: {fileID: 1370785043050426, guid: 0e5ca1c71a33faa418f915f419b04017,
     type: 2}
   Enemy2: {fileID: 1779739954635024, guid: 1ff21fcea9dc398479aaa5f3406c43f5, type: 2}
   shot: {fileID: 1923736398105372, guid: 9aa653089a081e043b0147f7ba7c81f7, type: 2}
