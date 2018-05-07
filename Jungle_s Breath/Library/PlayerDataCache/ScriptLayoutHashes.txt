@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-88101ce9cb858b8d797f9810267379ed Assembly-CSharp.dll:.Death
+6d62a5a1fb9eff0a8010b31a78dc12a6 Assembly-CSharp.dll:.Death
 9a712312d9e34b69ba53929a74f6316f Assembly-CSharp.dll:.Stalactite
 87385ffec79f806cf7969220c0e39240 Assembly-CSharp.dll:.ShieldMovement
 0c656e59eb933f1afc111ac922806986 Assembly-CSharp.dll:.StalactiteDetector
@@ -89,6 +89,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 6a492d7b8465b2c00d15794caa46ec2e Assembly-CSharp.dll:TMPro.Examples.TMPro_InstructionOverlay
 765037da3d8faeee91e39d672b924c61 Assembly-CSharp.dll:.EnvMapAnimator
+1fc2592cf78371f565a5d358fff5e1a1 Assembly-CSharp.dll:.ShootingHoritzontal
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -198,6 +199,7 @@ a8ed45ab553b07236625df6cc6ac449c TextMeshPro-2017.3-1.0.56-Editor.dll:TMPro.Edit
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.TeleType
 0ccc58f94a3e697c8df96a88b61e0857 Assembly-CSharp.dll:.ShootingScript2
 8a50d3d11bf0cc541f5c35347dd25633 Assembly-CSharp.dll:TMPro.Examples.ShaderPropAnimator
+529c1e2409e75ee3629df4224d2f2d13 Assembly-CSharp.dll:.ShotAppleScript
 fc9587451b01722db29302bf11a56c1b Assembly-CSharp.dll:.BoxMovement
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 76015de5fcb247eeb8df66c001d5a22d Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRateCounter
@@ -243,8 +245,10 @@ f02bb0f1264ef7d393d9bcdd244400a4 Assembly-CSharp.dll:.PauseMenu
 afc52d27c3ec0bd47909e81bd45fbffa Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.VertexColorCycler
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
-ea09997084f088de843932e4e7c97f3d Assembly-CSharp.dll:.PlayerController
+90fcbbab930a8c586ebdbc2f2ac1ee97 Assembly-CSharp.dll:.PlayerController
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 aa4162592bc07f465333766fbdc679f0 Assembly-CSharp.dll:.Respawn
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
+d9db7e257680b5beb9564b1ccbe81662 Assembly-CSharp.dll:.ButtonClickedPad
+8b9f05e49e19b6f3202c3e211aaeb09b Assembly-CSharp.dll:.BackOnMenu
