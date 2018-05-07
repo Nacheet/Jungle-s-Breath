@@ -55,8 +55,10 @@
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingHoritzontal.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript2.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotAppleScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\Stalactite\Stalactite.cs" />
      <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />
@@ -130,7 +132,7 @@
      <None Include="Assets\TextMesh Pro\Examples _ Extras\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples _ Extras\Fonts\Bangers - OFL.txt" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle-s-Breath/Jungle_s Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle_s Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -196,10 +198,10 @@
  <HintPath>E:/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
- <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle-s-Breath/Jungle_s Breath/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+ <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle_s Breath/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
  </Reference>
  <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
- <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle-s-Breath/Jungle_s Breath/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+ <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle_s Breath/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Users/Usuario/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>

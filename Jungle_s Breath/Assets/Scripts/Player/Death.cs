@@ -9,15 +9,15 @@ public class Death : MonoBehaviour
     public GameObject shield;
 
     public Transform teleportPos;
-    public float fadeTime;
+    private float fadeTime;
     private float timeTeleport = 0.8f;
 
 
-    public bool playerCol;
-    public bool shieldCol;
-    public float time;
+    private bool playerCol;
+    private bool shieldCol;
+    private float time;
     public bool dead;
-
+    public Vector2 deathPosition;
 
     public CanvasGroup uiElement;
 
@@ -86,6 +86,7 @@ public class Death : MonoBehaviour
         if (playerCol && !shieldCol)
         {
             dead = true;
+            deathPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
 
             if (fadeIn)
                 FadeIn();
@@ -96,7 +97,7 @@ public class Death : MonoBehaviour
             fadeTime = Time.time;
         }
 
-        if(teleport && Time.time > fadeTime + timeTeleport)
+        if (teleport && Time.time > fadeTime + timeTeleport)
         {
             transform.position = teleportPos.position;
             teleport = false;
@@ -112,3 +113,4 @@ public class Death : MonoBehaviour
 
 
 }
+

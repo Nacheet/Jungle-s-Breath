@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private GameObject player;
+    public BoxCollider2D shield;
     private SpriteRenderer rend;
     public LayerMask floor;
     public Animator animator;
@@ -46,6 +47,15 @@ public class PlayerController : MonoBehaviour
     public float attDuration = 1.5f;
     public float lastAttDone;
 
+    //Dash
+    public bool canDash = true;
+    public bool dash = false;
+    public float lastDashDone;
+    public float nextDash;
+    public float dashCoolDown = 1.0f;
+    public float dashDuration = 0.2f;
+    public float dashSpeed = 3.0f;
+
     //GameControl
     public bool dead;
 
@@ -61,149 +71,216 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float horizontal;
-        onTheGround = isOnGround();
         dead = player.GetComponent<Death>().dead;
 
-        if ((leftWallHit || rightWallHit) && !onTheGround)
-            horizontal = 0;
-        else
-            horizontal = Input.GetAxis("Horizontal");
+        if (!dead)
+        {
+            if (movingRight)
+                rend.flipX = false;
+            else
+                rend.flipX = true;
 
-        if (player.GetComponent<Rigidbody2D>().velocity.x == 0)
-        {
-            animator.SetBool("moving", false);
-        }
-        else if (player.GetComponent<Rigidbody2D>().velocity.x > 0)
-        {
-            movingRight = true;
-            rend.flipX = false;
-            animator.SetBool("moving", true);
-        }
-        else
-        {
-            movingRight = false;
-            rend.flipX = true;
-            animator.SetBool("moving", true);
-        }
 
-        if (onTheGround)
-        {
-            enableJump = true;
-            enableDoubleJump = true;
-            jumpSpeed = normalJumpSpeed;
-        }
-        else if (!onTheGround && enableDoubleJump)
-        {
-            jumpSpeed = doubleJumpSpeed;
-        }
+            float horizontal;
+            onTheGround = isOnGround();
 
-        leftWallHit = isOnWallLeft();
-        rightWallHit = isOnWallRight();
-        if (leftWallHit)
-        {
-            wallHit = true;
-            wallHitDirection = 1;
-        }
-        else if (rightWallHit)
-        {
-            wallHit = true;
-            wallHitDirection = -1;
-        }
-        else
-        {
-            wallHit = false;
-            wallHitDirection = 0;
-        }
 
-        if (Input.GetButtonDown("Jump"))
-        {
+            if ((leftWallHit || rightWallHit) && !onTheGround)
+                horizontal = 0;
+            else
+                horizontal = Input.GetAxis("Horizontal");
+
+            if (player.GetComponent<Rigidbody2D>().velocity.x == 0)
+            {
+                animator.SetBool("moving", false);
+            }
+            else if (player.GetComponent<Rigidbody2D>().velocity.x > 0)
+            {
+                movingRight = true;
+                animator.SetBool("moving", true);
+            }
+            else if (player.GetComponent<Rigidbody2D>().velocity.x < -0.04)
+            {
+                movingRight = false;
+                animator.SetBool("moving", true);
+            }
+
             if (onTheGround)
             {
-                jump();
+                enableJump = true;
+                enableDoubleJump = true;
+                jumpSpeed = normalJumpSpeed;
             }
-            else if (wallHit)
+            else if (!onTheGround && enableDoubleJump)
             {
-                wallJumped = true;
-                player.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed * wallHitDirection, normalJumpSpeed);
-                wallJumpTime = Time.time;
+                jumpSpeed = doubleJumpSpeed;
             }
-            else if (enableDoubleJump)
+
+            leftWallHit = isOnWallLeft();
+            rightWallHit = isOnWallRight();
+            if (leftWallHit)
             {
-                jump();
-                enableDoubleJump = false;
+                wallHit = true;
+                wallHitDirection = 1;
             }
-        }
-
-        if (Time.time > wallJumpTime + timeToMoveAfterJumping && wallJumped)
-            wallJumped = false;
-
-        if (!wallJumped)
-            move(horizontal);
-
-        if (player.GetComponent<Rigidbody2D>().velocity.y < 0)
-            falling = true;
-        else
-            falling = false;
-
-        if ((leftWallHit || rightWallHit) && falling)
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, slidingVelocity);
-        else if (falling)
-            player.GetComponent<Rigidbody2D>().gravityScale = fallingGravity;
-        else
-            player.GetComponent<Rigidbody2D>().gravityScale = normalGravity;
-
-
-
-        //Shield
-        if (Input.GetButton("Fire1"))
-        {
-            if (onTheGround)
+            else if (rightWallHit)
             {
-                maxSpeed = newSpeed;
-                usingShield = true;
-                animator.SetBool("usingShield", true);
+                wallHit = true;
+                wallHitDirection = -1;
             }
             else
             {
-                usingShield = true;
-                animator.SetBool("usingShield", true);
+                wallHit = false;
+                wallHitDirection = 0;
             }
 
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (onTheGround)
+                {
+                    jump();
+                }
+                else if (wallHit)
+                {
+                    wallJumped = true;
+                    player.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed * wallHitDirection, normalJumpSpeed);
+                    wallJumpTime = Time.time;
+                }
+                else if (enableDoubleJump)
+                {
+                    jump();
+                    enableDoubleJump = false;
+                }
+            }
+
+            if (Time.time > wallJumpTime + timeToMoveAfterJumping && wallJumped)
+                wallJumped = false;
+
+            if (!wallJumped)
+                move(horizontal);
+
+            if (player.GetComponent<Rigidbody2D>().velocity.y < 0)
+                falling = true;
+            else
+                falling = false;
+
+            if ((leftWallHit || rightWallHit) && falling)
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, slidingVelocity);
+            else if (falling)
+                player.GetComponent<Rigidbody2D>().gravityScale = fallingGravity;
+            else
+                player.GetComponent<Rigidbody2D>().gravityScale = normalGravity;
+
+
+
+            //Shield
+            if (Input.GetButton("Fire1"))
+            {
+                if (onTheGround)
+                {
+                    maxSpeed = newSpeed;
+                    usingShield = true;
+                    animator.SetBool("usingShield", true);
+                }
+                else
+                {
+                    usingShield = true;
+                    animator.SetBool("usingShield", true);
+                }
+
+            }
+            else
+            {
+                usingShield = false;
+                maxSpeed = maxSpeedCopy;
+                animator.SetBool("usingShield", false);
+            }
+
+            //ShieldAttack
+            if (Time.time > nextAtt && onTheGround && usingShield)
+                canAtt = true;
+            else
+                canAtt = false;
+
+            if (Input.GetButtonDown("Fire2") && canAtt)
+            {
+                shieldAtt = true;
+                lastAttDone = Time.time;
+                nextAtt = Time.time + attCoolDown + attDuration;
+            }
+            if (lastAttDone + attDuration >= Time.time && shieldAtt)
+                GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
+            else
+                shieldAtt = false;
+
+            if (onTheGround)
+                animator.SetBool("onTheGround", true);
+            else
+                animator.SetBool("onTheGround", false);
+
+            if (leftWallHit || rightWallHit)
+                animator.SetBool("wallCollision", true);
+            else
+                animator.SetBool("wallCollision", false);
+
+
+            //Player dash / slide
+
+            if (Time.time > nextDash && onTheGround)
+                canDash = true;
+            else
+                canDash = false;
+
+            if (Input.GetButtonDown("Fire2") && !usingShield && canDash)
+            {
+                dash = true;
+                lastDashDone = Time.time;
+                nextDash = Time.time + dashCoolDown + dashDuration;
+            }
+
+            if (dash && Time.time <= lastDashDone + dashDuration)
+            {
+                if (!onTheGround)
+                {
+                    dash = false;
+                }
+
+                else if (onTheGround)
+                {
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(dashSpeed * GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
+                }
+
+            }
+            else
+            {
+                dash = false;
+            }
+
+            if (dash)
+            {
+                shield.GetComponent<BoxCollider2D>().enabled = false;
+                //animator.SetBool("dash", true);
+                rend.flipY = true;
+            }
+            else
+            {
+                shield.GetComponent<BoxCollider2D>().enabled = true;
+                //animator.SetBool("dash", false);
+                rend.flipY = false;
+            }
         }
         else
         {
-            usingShield = false;
-            maxSpeed = maxSpeedCopy;
-            animator.SetBool("usingShield", false);
+            player.transform.position = GetComponent<Death>().deathPosition;
+            animator.SetBool("moving", false);
         }
 
-        //ShieldAttack
-        if (Time.time > nextAtt && onTheGround && usingShield)
-            canAtt = true;
-        else
-            canAtt = false;
 
-        if (Input.GetButtonDown("Fire2") && canAtt)
-        {
-            shieldAtt = true;
-            lastAttDone = Time.time;
-            nextAtt = Time.time + attCoolDown + attDuration;
-        }
-        if (lastAttDone + attDuration >= Time.time && shieldAtt)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(attSpeed * GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y);
-        else
-            shieldAtt = false;
+        //Colliding with wall with animation bugs
 
-        if (onTheGround)
-            animator.SetBool("onTheGround", true);
-        else
-            animator.SetBool("onTheGround", false);
+        if ((leftWallHit && onTheGround && player.GetComponent<Rigidbody2D>().velocity.x < 0) || (rightWallHit && onTheGround && player.GetComponent<Rigidbody2D>().velocity.x > 0))
+            animator.SetBool("moving", false);
 
-        if (leftWallHit || rightWallHit)
-            animator.SetBool("wallCollision", true);
-        else
-            animator.SetBool("wallCollision", false);
     }
 
 
@@ -279,4 +356,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, this.jumpSpeed);
         animator.SetTrigger("jump");
     }
+
 }
+

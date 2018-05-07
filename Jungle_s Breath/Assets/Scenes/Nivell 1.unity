@@ -16049,6 +16049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9985facee3213c54bbab8b6246963564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: {fileID: 1809392216}
   floor:
     serializedVersion: 2
     m_Bits: 2560
@@ -16076,6 +16077,13 @@ MonoBehaviour:
   nextAtt: 0
   attDuration: 0.2
   lastAttDone: 0
+  canDash: 1
+  dash: 0
+  lastDashDone: 0
+  nextDash: 0
+  dashCoolDown: 1
+  dashDuration: 0.2
+  dashSpeed: 3
   dead: 0
 --- !u!114 &490863489
 MonoBehaviour:
@@ -16092,11 +16100,8 @@ MonoBehaviour:
   fadeIn: 1
   shield: {fileID: 1809392214}
   teleportPos: {fileID: 1196145032}
-  fadeTime: 0
-  playerCol: 0
-  shieldCol: 0
-  time: 0
   dead: 0
+  deathPosition: {x: 0, y: 0}
   uiElement: {fileID: 1363157487}
 --- !u!114 &490863490
 MonoBehaviour:
