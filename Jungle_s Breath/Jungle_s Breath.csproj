@@ -299,6 +299,7 @@
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingHoritzontal.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript2.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotAppleScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShotBehaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy\Stalactite\Stalactite.cs" />
     <Compile Include="Assets\Scripts\Enemy\Stalactite\StalactiteDetector.cs" />

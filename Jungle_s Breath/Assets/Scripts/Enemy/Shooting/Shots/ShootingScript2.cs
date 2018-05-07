@@ -33,7 +33,7 @@ public class ShootingScript2 : MonoBehaviour
                 nextShot = Time.time + Random.Range(minFireRate, maxFireRate); // Ponemos el valor del tiempo del siguiente disparo
                 GameObject newShot = Instantiate<GameObject>(shot, shotSpawn.position, shotSpawn.rotation); // Instanciamos el disparo
 
-                ShotBehaviour shotControl = newShot.GetComponent<ShotBehaviour>();
+                ShotAppleScript shotControl = newShot.GetComponent<ShotAppleScript>();
                 shotControl.vector = vector;
             }
 
