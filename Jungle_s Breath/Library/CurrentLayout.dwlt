@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 2129
+  controlID: 684
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1361
     height: 947
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 2130
+  controlID: 685
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1361
     height: 588
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 2131
+  controlID: 686
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -372,7 +372,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: eea8ffffa6deffff00000000
+    m_ExpandedIDs: 96fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -598,20 +598,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/Enemy/Shooting
+    - Assets/Scripts/Enemy/Shooting/Shots
   m_ViewMode: 1
   m_StartGridSize: 61
   m_LastFolders:
-  - Assets/Scripts/Enemy/Shooting
+  - Assets/Scripts/Enemy/Shooting/Shots
   m_LastFoldersGridSize: 61
   m_LastProjectPath: C:\Users\Ares\Documents\Repositories\Jungle-s-Breath\Jungle_s
     Breath
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a370000
-    m_LastClickedID: 14106
-    m_ExpandedIDs: 00000000be350000f83500004e36000006370000183700001a370000683700006c3700007e3700002838000042380000bc380000f438000008390000363b000000ca9a3bffffff7f
+    m_SelectedIDs: a4290000
+    m_LastClickedID: 10660
+    m_ExpandedIDs: 00000000d82800003e290000a4290000de2a0000fc2a0000fe2a0000ac2b0000b02b0000cc2b0000de2c0000a02d0000442e0000ba2e0000fa2e0000f041000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -639,7 +639,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000be350000f83500004e36000006370000183700001a370000683700006c3700007e3700002838000042380000bc380000f438000008390000363b000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000d82800003e290000a4290000de2a0000fc2a0000fe2a0000ac2b0000b02b0000cc2b0000de2c0000a02d0000442e0000ba2e0000fa2e0000f041000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -667,7 +667,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000ce280000fe270000dc2a00008e2b00000c2b0000c82700003a2800006a280000522800003a2900004c280000142c0000ba2800007e2a0000d2270000c62a0000682d0000902900002e2b0000be2b0000782c000000000000a6b40000d22b000098d9f8ff923d0000082e000040dcf9ffac2c0000b42a00000a360000ee2c0000
+    m_ExpandedInstanceIDs: c6230000ce280000fe270000dc2a00008e2b00000c2b0000c82700003a2800006a280000522800003a2900004c280000142c0000ba280000d2270000c62a0000682d0000902900002e2b0000be2b0000782c000000000000a6b40000d22b000098d9f8ff923d0000082e000040dcf9ffac2c0000b42a00000a360000ee2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

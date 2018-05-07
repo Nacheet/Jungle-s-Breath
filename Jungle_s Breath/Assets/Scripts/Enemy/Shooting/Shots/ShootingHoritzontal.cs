@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingHoritzontal : MonoBehaviour {
+public class ShootingHoritzontal : MonoBehaviour
+{
 
     public GameObject shootingTarget;
     public GameObject shot;
@@ -40,5 +41,14 @@ public class ShootingHoritzontal : MonoBehaviour {
             shotControl.vector = vector;
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider == GameObject.Find("Shield").GetComponent<Collider2D>())
+        {
+
+            Destroy(gameObject);
+        }
     }
 }
