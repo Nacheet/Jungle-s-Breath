@@ -18,7 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 9ca6347af5ceb6b0d1c105af31b6722e UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-6d62a5a1fb9eff0a8010b31a78dc12a6 Assembly-CSharp.dll:.Death
+64c059a32fa0b572f65922cd6ce779aa Assembly-CSharp.dll:.Death
 9a712312d9e34b69ba53929a74f6316f Assembly-CSharp.dll:.Stalactite
 87385ffec79f806cf7969220c0e39240 Assembly-CSharp.dll:.ShieldMovement
 0c656e59eb933f1afc111ac922806986 Assembly-CSharp.dll:.StalactiteDetector
@@ -176,6 +176,7 @@ e763036081c708b34f78f5a56f72c23d TextMeshPro-2017.3-1.0.56-Runtime.dll:TMPro.TMP
 d672cee35261f9935d5ce974c746730f TextMeshPro-2017.3-1.0.56-Runtime.dll:TMPro.TMP_Text
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_A
 b900ead596b2fb1093b31cb63a678767 Assembly-CSharp.dll:TMPro.Examples.TextMeshProFloatingText
+d9db7e257680b5beb9564b1ccbe81662 Assembly-CSharp.dll:.ButtonClickedPad
 dad1c1272dfe1898bb613dcb2631bcce Assembly-CSharp.dll:TMPro.Examples.Benchmark02
 05524b8f659e7bfe5756d1335fec24ba TextMeshPro-2017.3-1.0.56-Editor.dll:TMPro.EditorUtilities.DropdownEditor
 05524b8f659e7bfe5756d1335fec24ba TextMeshPro-2017.3-1.0.56-Editor.dll:TMPro.EditorUtilities.TMP_ColorGradientEditor
@@ -229,6 +230,7 @@ aa9d1bd0cc771545f2ae1f63a6d0ed6a Assembly-CSharp.dll:TMPro.Examples.TMP_TextEven
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 f0f0ab6b8a39d0572cfa4ea315d84fbf Assembly-CSharp.dll:TMPro.Examples.Benchmark04
 529c1e2409e75ee3629df4224d2f2d13 Assembly-CSharp.dll:.ShotBehaviour
+8b9f05e49e19b6f3202c3e211aaeb09b Assembly-CSharp.dll:.BackOnMenu
 29273f491d11f6bdd02a43a9d8df84c7 Assembly-CSharp.dll:TMPro.Examples.TMP_ExampleScript_01
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -250,5 +252,3 @@ af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExam
 aa4162592bc07f465333766fbdc679f0 Assembly-CSharp.dll:.Respawn
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
-d9db7e257680b5beb9564b1ccbe81662 Assembly-CSharp.dll:.ButtonClickedPad
-8b9f05e49e19b6f3202c3e211aaeb09b Assembly-CSharp.dll:.BackOnMenu

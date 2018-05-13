@@ -13,8 +13,9 @@ public class Death : MonoBehaviour
     private float timeTeleport = 0.8f;
 
 
-    private bool playerCol;
-    private bool shieldCol;
+    public bool playerCol;
+    public bool shieldCol;
+    public bool waterDeath = false;
     private float time;
     public bool dead;
     public Vector2 deathPosition;
@@ -61,9 +62,15 @@ public class Death : MonoBehaviour
     {
         shieldCol = shield.GetComponent<ShieldHitDetector>().shieldCol;
 
-        if (collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss" || collision.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss")
         {
             playerCol = true;
+            time = Time.time;
+        }
+
+        if(collision.gameObject.tag == "Water")
+        {
+            waterDeath = true;
             time = Time.time;
         }
     }
@@ -83,8 +90,9 @@ public class Death : MonoBehaviour
             playerCol = false;
         }
 
-        if (playerCol && !shieldCol)
+        if ((playerCol && !shieldCol) || (waterDeath && !shieldCol))
         {
+            waterDeath = false;
             dead = true;
             deathPosition = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
 
