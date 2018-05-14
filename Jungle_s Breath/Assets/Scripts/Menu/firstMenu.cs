@@ -5,7 +5,7 @@ using UnityEngine;
 public class firstMenu : MonoBehaviour {
 
     private bool goToMainMenu;
-    private bool firstTimePressed;
+    //private bool firstTimePressed;
     private float time;
 
     public bool fadeIn = false;
@@ -21,7 +21,7 @@ public class firstMenu : MonoBehaviour {
     public void Start()
     {
         goToMainMenu = false;
-        firstTimePressed = false;
+        //firstTimePressed = false;
         FadeOut();
     }
 
@@ -30,7 +30,7 @@ public class firstMenu : MonoBehaviour {
     {
         if(menu.activeSelf)
         {
-            if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("Pause") || Input.GetButtonDown("Fire1") || Input.anyKeyDown) && firstTimePressed)
+            if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("Pause") || Input.GetButtonDown("Fire1") || Input.anyKeyDown) /*&& firstTimePressed*/)
             {
                 goToMainMenu = true;
                 if (fadeIn)
@@ -41,16 +41,16 @@ public class firstMenu : MonoBehaviour {
                 fadeTime = Time.time;
             }
 
-            if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("Pause") || Input.GetButtonDown("Fire1") || Input.anyKeyDown) && !firstTimePressed)
+            /*if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("Pause") || Input.GetButtonDown("Fire1") || Input.anyKeyDown) && !firstTimePressed)
             {
                 firstTimePressed = true;
-            }
+            }*/
 
             if (goToMainMenu && Time.time > fadeTime + timeFade)
             {
                 mainMenu.SetActive(true);
                 firstMenuInside.SetActive(false);
-                firstTimePressed = false;
+                //firstTimePressed = false;
                 goToMainMenu = false;
 
                 if (fadeIn)

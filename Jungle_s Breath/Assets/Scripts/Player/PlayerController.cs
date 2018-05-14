@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer rend;
     public LayerMask floor;
     public Animator animator;
+    public PauseMenu pauseMenu;
 
     //LateralMovement
     public bool onTheGround = false;
@@ -58,10 +59,11 @@ public class PlayerController : MonoBehaviour
 
     //GameControl
     public bool dead;
-
+    public bool paused;
 
     void Start()
     {
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
         rend = GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player");
         jumpSpeed = normalJumpSpeed;
@@ -75,11 +77,11 @@ public class PlayerController : MonoBehaviour
 
         if (!dead)
         {
-            if (movingRight)
+            paused = pauseMenu.GetComponent<PauseMenu>().GameIsPaused;
+            if (movingRight && !paused)
                 rend.flipX = false;
-            else
+            else if(!movingRight && !paused)
                 rend.flipX = true;
-
 
             float horizontal;
             onTheGround = isOnGround();
@@ -259,14 +261,14 @@ public class PlayerController : MonoBehaviour
             if (dash)
             {
                 shield.GetComponent<BoxCollider2D>().enabled = false;
-                //animator.SetBool("dash", true);
-                rend.flipY = true;
+                animator.SetBool("dash", true);
+                //rend.flipY = true;
             }
             else
             {
                 shield.GetComponent<BoxCollider2D>().enabled = true;
-                //animator.SetBool("dash", false);
-                rend.flipY = false;
+                animator.SetBool("dash", false);
+                //rend.flipY = false;
             }
         }
         else

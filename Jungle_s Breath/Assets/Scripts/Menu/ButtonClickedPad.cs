@@ -23,13 +23,11 @@ public class ButtonClickedPad : MonoBehaviour, ISelectHandler, IDeselectHandler{
     public void OnSelect(BaseEventData eventData)
     {
         active = true;
-        Debug.Log(button.name + " was selected ");
     }
 
     public void OnDeselect(BaseEventData data)
     {
         active = false;
-        Debug.Log(button.name + " DESELECTED ");
     }
 
     public void setFalse()
