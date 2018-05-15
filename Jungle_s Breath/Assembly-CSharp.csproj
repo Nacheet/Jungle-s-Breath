@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Enemy\Mushroom\OnRangeDetector.cs" />
      <Compile Include="Assets\Scripts\Enemy\OnRangeDetectorExplosion.cs" />
      <Compile Include="Assets\Scripts\Enemy\Rat\Rat.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Shooting\ScaleProjectile.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingHoritzontal.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\Shooting\Shots\ShootingScript2.cs" />
