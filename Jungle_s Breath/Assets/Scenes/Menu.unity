@@ -1054,6 +1054,7 @@ GameObject:
   - component: {fileID: 399906546}
   - component: {fileID: 399906550}
   - component: {fileID: 399906551}
+  - component: {fileID: 399906552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1162,7 +1163,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: bf007d07594ba4b44862cee9212cb188,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c24fce21d39eb42ed9cb6ef45e2c0396, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ad4c6c9363ece3640961a253a8df34c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1233,6 +1234,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &399906552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399906545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b4ce826caab3e47bce739d094a81c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horrorEffect: {fileID: 8300000, guid: 337a40ac9ec75f542bf8c8863f8129e7, type: 3}
 --- !u!1 &420391773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +3849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffdaf066d7307fc4fb85553a9fb77834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 24100000, guid: bf007d07594ba4b44862cee9212cb188, type: 2}
+  timeToStart: 1.2
 --- !u!1 &926074595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5915,7 +5930,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917654006}
-        m_MethodName: playGame
+        m_MethodName: startCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
