@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Dust.cs" />
-     <Compile Include="Assets\PlayMusicChange.cs" />
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
@@ -78,6 +77,7 @@
      <Compile Include="Assets\Scripts\Menu\firstMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\PlayMusicChange.cs" />
      <Compile Include="Assets\Scripts\Menu\SettingsMenu.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player\Death.cs" />
@@ -139,9 +139,6 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Examples _ Extras\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples _ Extras\Fonts\Bangers - OFL.txt" />
- <Reference Include="Facebook.Unity.Settings">
- <HintPath>E:/Universitat/1r DEV/Treballs/Jungle's Breath/Jungle_s Breath/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

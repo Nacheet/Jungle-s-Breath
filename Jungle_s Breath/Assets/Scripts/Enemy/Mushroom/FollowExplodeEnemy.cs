@@ -8,6 +8,7 @@ public class FollowExplodeEnemy : MonoBehaviour {
     public GameObject rangeDetector;
     public GameObject explosionDetector;
     public GameObject explosion;
+    public GameObject partSys;
 
     //Enemy movement
     public Vector2 direction;
@@ -74,5 +75,10 @@ public class FollowExplodeEnemy : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+
+        if (explode)
+            partSys.SetActive(true);
+        else
+            partSys.SetActive(false);
 	}
 }
