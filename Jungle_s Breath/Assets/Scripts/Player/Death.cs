@@ -9,7 +9,7 @@ public class Death : MonoBehaviour
     public GameObject shield;
 
     public Transform teleportPos;
-    private float fadeTime;
+    public float fadeTime;
     private float timeTeleport = 0.8f;
 
 

@@ -14,17 +14,22 @@ public class Rat : MonoBehaviour {
     public float maxSpeed;
     public bool isOnRange;
 
+    private bool collided;
+    private float time;
+    private float timeToMove = 2;
+
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
         rend = GetComponent<SpriteRenderer>();
+        this.GetComponent<Rigidbody2D>().gravityScale = GameObject.Find("Player").GetComponent<Rigidbody2D>().gravityScale;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         isOnRange = rangeDetector.GetComponent<OnRangeDetector>().isOnRange;
-        if(isOnRange)
+        if(isOnRange && !collided)
         {
             direction = new Vector2(player.transform.position.x - this.transform.position.x, 0);
             direction.Normalize();
@@ -46,6 +51,26 @@ public class Rat : MonoBehaviour {
         else if (this.GetComponent<Rigidbody2D>().velocity.x > 0)
             rend.flipX = false;
 
+        if(collided && Time.time < time + timeToMove)
+        {
+            this.GetComponent<Rigidbody2D>().gravityScale = 0;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else if (collided && Time.time > time + timeToMove)
+        {
+            collided = false;
+            this.GetComponent<BoxCollider2D>().enabled = true;
+            this.GetComponent<Rigidbody2D>().gravityScale = GameObject.Find("Player").GetComponent<Rigidbody2D>().gravityScale;
+        }
 
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if(coll.collider.gameObject.tag == "Player")
+        {
+            collided = true;
+            time = Time.time;
+        }
     }
 }
