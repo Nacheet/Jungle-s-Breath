@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1757464069}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!1 &47926890
@@ -8812,6 +8812,7 @@ GameObject:
   - component: {fileID: 258294841}
   - component: {fileID: 258294840}
   - component: {fileID: 258294843}
+  - component: {fileID: 258294844}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -8855,7 +8856,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.578}
@@ -8896,7 +8897,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258294838}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -8940,6 +8941,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &258294844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258294838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2c5f074b166d7419fc0bd8588ef4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  button: {fileID: 258294840}
 --- !u!1001 &259245135
 Prefab:
   m_ObjectHideFlags: 0
@@ -10989,7 +11003,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: SETTINGS
+  m_text: MAIN MENU
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09641b029dfa78843902b548a9de7553, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 09641b029dfa78843902b548a9de7553, type: 2}
@@ -12102,7 +12116,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_LocalScale.x
@@ -31688,7 +31702,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918638571}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 18.27359, y: -124.11789, z: 0.16443612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34741,8 +34755,8 @@ Transform:
   m_Children:
   - {fileID: 1001720356}
   - {fileID: 1283313255}
-  - {fileID: 1537071792}
   - {fileID: 1040696702}
+  - {fileID: 1537071792}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37234,7 +37248,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_LocalScale.x
@@ -40541,6 +40555,7 @@ GameObject:
   - component: {fileID: 1220018959}
   - component: {fileID: 1220018958}
   - component: {fileID: 1220018957}
+  - component: {fileID: 1220018961}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -40601,7 +40616,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.578}
@@ -40642,7 +40657,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220018955}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -40669,6 +40684,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220018955}
+--- !u!114 &1220018961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220018955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2c5f074b166d7419fc0bd8588ef4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  button: {fileID: 1220018958}
 --- !u!4 &1220294982 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4748573619840588, guid: 59af28eba32b4d248909b92b19cc514d,
@@ -53855,7 +53883,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4980543535117540, guid: a99a262502a3c3a498625edf54a297d6, type: 2}
       propertyPath: m_LocalScale.x
@@ -56431,6 +56459,7 @@ GameObject:
   - component: {fileID: 1639847247}
   - component: {fileID: 1639847249}
   - component: {fileID: 1639847248}
+  - component: {fileID: 1639847250}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -56554,6 +56583,22 @@ MonoBehaviour:
   GameIsPaused: 0
   pauseMenuUI: {fileID: 500462321}
   fades: {fileID: 918638571}
+--- !u!114 &1639847250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1639847242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f29155df3d986f4bb347733ac77c052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butt1: {fileID: 1823613050}
+  butt2: {fileID: 2106581461}
+  butt3: {fileID: 1220018955}
+  butt4: {fileID: 258294838}
+  butt5: {fileID: 1118048934}
 --- !u!1001 &1640132901
 Prefab:
   m_ObjectHideFlags: 0
@@ -66777,6 +66822,7 @@ GameObject:
   - component: {fileID: 1823613053}
   - component: {fileID: 1823613052}
   - component: {fileID: 1823613055}
+  - component: {fileID: 1823613056}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -66820,7 +66866,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.578}
@@ -66842,7 +66888,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1639847249}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -66861,7 +66907,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1823613050}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -66905,6 +66951,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1823613056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823613050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2c5f074b166d7419fc0bd8588ef4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  button: {fileID: 1823613052}
 --- !u!1001 &1823928106
 Prefab:
   m_ObjectHideFlags: 0
@@ -77347,6 +77406,7 @@ GameObject:
   - component: {fileID: 2106581464}
   - component: {fileID: 2106581463}
   - component: {fileID: 2106581466}
+  - component: {fileID: 2106581467}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -77390,7 +77450,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.578}
@@ -77442,7 +77502,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2106581461}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -77486,6 +77546,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2106581467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106581461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2c5f074b166d7419fc0bd8588ef4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  button: {fileID: 2106581463}
 --- !u!4 &2108117808 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4748573619840588, guid: 59af28eba32b4d248909b92b19cc514d,

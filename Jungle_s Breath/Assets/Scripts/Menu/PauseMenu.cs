@@ -9,6 +9,13 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenuUI;
     public GameObject fades;
 
+    private RestartButtonSizePause restart;
+
+    void Start()
+    {
+        restart = this.gameObject.GetComponent<RestartButtonSizePause>();
+    }
+
 	void Update () {
 		
         if(Input.GetButtonDown("Pause"))
@@ -30,10 +37,11 @@ public class PauseMenu : MonoBehaviour {
 
     void Pause()
     {
+        fades.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        fades.SetActive(false); 
+        restart.RestartSize();
     }
 
     public void QuitGame()

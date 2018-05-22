@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartButtonSize : MonoBehaviour {
+public class RestartButtonSizeMenu : MonoBehaviour {
 
     public GameObject butt1, butt2, butt3, butt4, butt5, butt6, butt7, butt8, butt9;
 
