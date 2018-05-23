@@ -12,11 +12,12 @@ public class Death : MonoBehaviour
     public float fadeTime;
     private float timeTeleport = 0.8f;
 
+    public bool firstDeadth = false;
 
     public bool playerCol;
     public bool shieldCol;
     public bool waterDeath = false;
-    private float time;
+    private float time = 100000;
     public bool dead;
     public Vector2 deathPosition;
 
@@ -62,7 +63,8 @@ public class Death : MonoBehaviour
     {
         shieldCol = shield.GetComponent<ShieldHitDetector>().shieldCol;
 
-        if (collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss")
+        if (collision.gameObject.tag == "Shot" || collision.gameObject.tag == "ShotBoss" || 
+            collision.gameObject.tag == "Deadly")
         {
             playerCol = true;
             time = Time.time;
@@ -70,8 +72,19 @@ public class Death : MonoBehaviour
 
         if(collision.gameObject.tag == "Water")
         {
-            waterDeath = true;
+            playerCol = true;
             time = Time.time;
+        }
+
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if(collision.gameObject.tag == "Water" && !playerCol)
+        {
+            playerCol = true;
         }
     }
 
@@ -84,13 +97,18 @@ public class Death : MonoBehaviour
 
     void Update()
     {
+        if (!firstDeadth)
+            time = Time.time;
+
+        if (dead)
+            firstDeadth = true;
 
         if (playerCol && Time.time > time + 0.1)
         {
             playerCol = false;
         }
 
-        if ((playerCol && !shieldCol) || (waterDeath && !shieldCol))
+        if ((playerCol && !shieldCol))
         {
             waterDeath = false;
             dead = true;

@@ -290,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dust.cs" />
+    <Compile Include="Assets\ratSpawn.cs" />
     <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
@@ -316,6 +317,8 @@
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PlayMusicChange.cs" />
+    <Compile Include="Assets\Scripts\Menu\RestartButtonSizeMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\RestartButtonSizePause.cs" />
     <Compile Include="Assets\Scripts\Menu\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player\Death.cs" />

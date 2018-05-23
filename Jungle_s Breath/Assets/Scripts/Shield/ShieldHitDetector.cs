@@ -10,6 +10,7 @@ public class ShieldHitDetector : MonoBehaviour {
     public float time;
 
     public bool shieldCol;
+    public bool waterCol;
 
     void Update()
     {
@@ -27,6 +28,15 @@ public class ShieldHitDetector : MonoBehaviour {
         {
             shieldCol = true;
             time = Time.time;
+
+            if (collision.gameObject.tag == "Water")
+                waterCol = true;
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Water")
+            waterCol = false;
     }
 }

@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
     public bool dead;
     public bool paused;
 
+    //Jump on Water
+    public bool shieldCol;
+    public GameObject shieldGO;
+
     void Start()
     {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
@@ -107,6 +111,8 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("moving", true);
             }
 
+            shieldCol = shieldGO.GetComponent<ShieldHitDetector>().waterCol;
+
             if (onTheGround)
             {
                 enableJump = true;
@@ -138,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("Jump"))
             {
-                if (onTheGround)
+                if (onTheGround || shieldCol)
                 {
                     jump();
                 }

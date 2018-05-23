@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 61388764124198330}
   - component: {fileID: 114051219844477844}
   - component: {fileID: 95995008565243408}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Rat
   m_TagString: Shot
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744162340515444}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 566.8, y: -84.935, z: -0.8399999}
+  m_LocalPosition: {x: 300.85, y: -130.55, z: -0.8399999}
   m_LocalScale: {x: 2.5068939, y: 2.0026047, z: 1}
   m_Children:
   - {fileID: 4077859586861148}
@@ -107,7 +107,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.120176315, y: 0.046653748}
+  m_Offset: {x: 0.011025906, y: 1.7514486}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -118,7 +118,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 31.087841, y: 23.852825}
+  m_Size: {x: 2.6177082, y: 4.5632935}
   m_EdgeRadius: 0
 --- !u!61 &61388764124198330
 BoxCollider2D:
