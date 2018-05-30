@@ -7,7 +7,6 @@ public class Stalactite : MonoBehaviour {
     public GameObject detector;
     public GameObject partsys;
 
-    //int minGravity = 0;
     public float maxGravity;
     public bool playerUnder;
     public bool hitPlayer;
@@ -16,6 +15,8 @@ public class Stalactite : MonoBehaviour {
 
     public float time = 0;
     private float timeToStopPart = 0.5f;
+
+    public bool destroy = false;
 
 
     void Start()
@@ -45,15 +46,18 @@ public class Stalactite : MonoBehaviour {
         if (coll.collider.gameObject.tag == "Player")
         {
             hitPlayer = true;
+            destroy = true;
             Destroy(this.gameObject, destroyTime);
         }
         else if (coll.collider.gameObject.tag == "Shield")
         {
             hitShield = true;
+            destroy = true;
             Destroy(gameObject, destroyTime);
         }
         else //if (coll.collider.gameObject.tag == "Ground")
         {
+            destroy = true;
             Destroy(gameObject, destroyTime);
         }
     }

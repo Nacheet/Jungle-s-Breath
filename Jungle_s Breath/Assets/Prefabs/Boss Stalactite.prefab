@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212590060421516390}
   - component: {fileID: 61411763712499192}
   - component: {fileID: 50291938674919760}
-  - component: {fileID: 114384743058510508}
+  - component: {fileID: 114068629772509656}
   m_Layer: 19
   m_Name: Boss Stalactite
   m_TagString: Shot
@@ -98,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 1713194454155094}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -2.4129105, y: 1.7562232, z: 1}
+  m_LocalScale: {x: -7.0054426, y: 7.0909, z: 1}
   m_Children:
   - {fileID: 4146163272350846}
   - {fileID: 4523674703806448}
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0029647425, y: 0.0024904907}
+  m_Offset: {x: 0.0029647425, y: -0.14126648}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10619967, y: 0.57134074}
+  m_Size: {x: 0.10619967, y: 0.2838268}
   m_EdgeRadius: 0
 --- !u!61 &61985466161364006
 BoxCollider2D:
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 5.0265274, y: -17.485392}
+  m_Offset: {x: 0.0027832985, y: -2.0416136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -173,9 +173,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 58.345474, y: 35.13827}
+  m_Size: {x: 2.1912284, y: 4.2507153}
   m_EdgeRadius: 0
---- !u!114 &114384743058510508
+--- !u!114 &114068629772509656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -183,20 +183,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713194454155094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ccce83b4f38cd4fb18c8bd780df92c, type: 3}
+  m_Script: {fileID: 11500000, guid: d8d22b319d0fb8e4a807e3fd4ae50e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detector: {fileID: 1226369668166692}
   partsys: {fileID: 1823611634154178}
-  boss: {fileID: 0}
   maxGravity: 2
   playerUnder: 0
   hitPlayer: 0
   hitShield: 0
-  destroyTime: 0
+  destroyTime: 0.2
   time: 0
-  waterSplashed: 0
-  splashPosition: {x: 0, y: 0}
+  destroy: 0
 --- !u!114 &114593641575986792
 MonoBehaviour:
   m_ObjectHideFlags: 1

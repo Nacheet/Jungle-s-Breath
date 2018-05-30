@@ -17098,7 +17098,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490863482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.8, y: -116.4, z: -0.2}
+  m_LocalPosition: {x: 14.8, y: -2.8, z: -0.2}
   m_LocalScale: {x: 2.1011512, y: 2.1060913, z: 1}
   m_Children:
   - {fileID: 1809392215}
@@ -17198,6 +17198,8 @@ MonoBehaviour:
   dashSpeed: 3
   dead: 0
   paused: 0
+  shieldCol: 0
+  shieldGO: {fileID: 1809392214}
 --- !u!114 &490863489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17214,6 +17216,7 @@ MonoBehaviour:
   shield: {fileID: 1809392214}
   teleportPos: {fileID: 1196145032}
   fadeTime: 0
+  firstDeadth: 0
   playerCol: 0
   shieldCol: 0
   waterDeath: 0
@@ -66425,6 +66428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   shieldCol: 0
+  waterCol: 0
 --- !u!1001 &1809498347
 Prefab:
   m_ObjectHideFlags: 0
