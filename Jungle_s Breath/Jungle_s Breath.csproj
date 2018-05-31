@@ -322,6 +322,7 @@
     <Compile Include="Assets\Scripts\Game Control\ShowOrHideGameObject.cs" />
     <Compile Include="Assets\Scripts\Menu\BackOnMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\ButtonClickedPad.cs" />
+    <Compile Include="Assets\Scripts\Menu\FinalText.cs" />
     <Compile Include="Assets\Scripts\Menu\firstMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
