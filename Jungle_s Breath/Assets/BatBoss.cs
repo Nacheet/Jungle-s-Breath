@@ -15,6 +15,8 @@ public class BatBoss : MonoBehaviour {
     GameObject enemyCopy;
     public Transform state0Position;
 
+    public Animator animator;
+
     public int state = 0;
     public int health = 100;
     public int maxHealth;
@@ -47,6 +49,25 @@ public class BatBoss : MonoBehaviour {
 
 	void Update ()
     {
+        if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x == 0)
+        {
+            animator.SetBool("FrontFly", true);
+            animator.SetBool("LeftFly", false);
+            animator.SetBool("RightFly", false);
+        }
+        else if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            animator.SetBool("FrontFly", false);
+            animator.SetBool("LeftFly", false);
+            animator.SetBool("RightFly", true);
+        }
+        else if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            animator.SetBool("FrontFly", false);
+            animator.SetBool("LeftFly", true);
+            animator.SetBool("RightFly", false);
+        }
+
         if ((health < maxHealth * 0.9 && state == 0))
             state = 1;
 

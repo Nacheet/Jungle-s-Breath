@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 70569105441603930}
   - component: {fileID: 212033383031969288}
   - component: {fileID: 114193040484014796}
+  - component: {fileID: 95702647185988960}
   m_Layer: 14
   m_Name: Bat
   m_TagString: Untagged
@@ -78,6 +79,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0030978906, y: -0.00045720892}
   m_Size: {x: 0.12776805, y: 0.13706565}
   m_Direction: 0
+--- !u!95 &95702647185988960
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087236284419054}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e30d4aaac8a83d48a1113daada5466c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114193040484014796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,6 +110,7 @@ MonoBehaviour:
   batBoss: {fileID: 1676365553825870, guid: c598b5fa5cf0da342afc600275269360, type: 2}
   maxSpeed: 1
   collided: 0
+  animator: {fileID: 95702647185988960}
 --- !u!212 &212033383031969288
 SpriteRenderer:
   m_ObjectHideFlags: 1

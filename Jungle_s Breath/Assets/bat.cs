@@ -11,6 +11,7 @@ public class bat : MonoBehaviour {
     Vector2 direction;
 
     public bool collided = false;
+    public Animator animator;
 
     private void Start()
     {
@@ -21,7 +22,25 @@ public class bat : MonoBehaviour {
     void Update ()
     {
         this.GetComponent<Rigidbody2D>().velocity = direction * maxSpeed;
-	}
+        if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x == 0)
+        {
+            animator.SetBool("FrontFly", true);
+            animator.SetBool("LeftFly", false);
+            animator.SetBool("RightFly", false);
+        }
+        else if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            animator.SetBool("FrontFly", false);
+            animator.SetBool("LeftFly", false);
+            animator.SetBool("RightFly", true);
+        }
+        else if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            animator.SetBool("FrontFly", false);
+            animator.SetBool("LeftFly", true);
+            animator.SetBool("RightFly", false);
+        }
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
