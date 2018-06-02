@@ -12,6 +12,7 @@ TagManager:
   - ShotBoss
   - Water
   - Deadly
+  - Bat
   layers:
   - Default
   - TransparentFX

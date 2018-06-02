@@ -55,7 +55,12 @@ public class Stalactite : MonoBehaviour {
             destroy = true;
             Destroy(gameObject, destroyTime);
         }
-        else //if (coll.collider.gameObject.tag == "Ground")
+        else if(coll.collider.gameObject.tag == "Bat")
+        {
+            destroy = true;
+            Destroy(gameObject);
+        }
+        else if (coll.collider.gameObject.tag == "Ground")
         {
             destroy = true;
             Destroy(gameObject, destroyTime);

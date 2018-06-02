@@ -51,10 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BossStalactite.cs" />
+     <Compile Include="Assets\bat.cs" />
+     <Compile Include="Assets\BatBoss.cs" />
+     <Compile Include="Assets\Boss2Area.cs" />
+     <Compile Include="Assets\CameraShake.cs" />
      <Compile Include="Assets\Dust.cs" />
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Bosses\Second Boss\BossStalactite.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Bosses\Second Boss\SecondBoss.cs" />
      <Compile Include="Assets\Scripts\Enemy\MovingEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\Mushroom\FollowExplodeEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\Mushroom\OnRangeDetector.cs" />
@@ -77,6 +82,7 @@
      <Compile Include="Assets\Scripts\Game Control\ShowOrHideGameObject.cs" />
      <Compile Include="Assets\Scripts\Menu\BackOnMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\ButtonClickedPad.cs" />
+     <Compile Include="Assets\Scripts\Menu\FinalText.cs" />
      <Compile Include="Assets\Scripts\Menu\firstMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
@@ -91,7 +97,9 @@
      <Compile Include="Assets\Scripts\Shield\ShieldHitDetector.cs" />
      <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
      <Compile Include="Assets\Scripts\Tutorial\Tutorials.cs" />
-     <Compile Include="Assets\SecondBoss.cs" />
+     <Compile Include="Assets\StalactiteBat.cs" />
+     <Compile Include="Assets\StalactiteGenerator.cs" />
+     <Compile Include="Assets\StalactiteSpawn.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark02.cs" />
@@ -235,10 +243,6 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Usuario/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{9D2CCE2D-5746-15AB-1F03-2292F280CE09}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
