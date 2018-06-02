@@ -295,6 +295,7 @@
     <Compile Include="Assets\bat.cs" />
     <Compile Include="Assets\BatBoss.cs" />
     <Compile Include="Assets\Boss2Area.cs" />
+    <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\Dust.cs" />
     <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
