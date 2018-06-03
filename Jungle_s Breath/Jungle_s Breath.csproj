@@ -325,6 +325,7 @@
     <Compile Include="Assets\Scripts\Menu\ButtonClickedPad.cs" />
     <Compile Include="Assets\Scripts\Menu\FinalText.cs" />
     <Compile Include="Assets\Scripts\Menu\firstMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\GamePadText.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PlayMusicChange.cs" />
