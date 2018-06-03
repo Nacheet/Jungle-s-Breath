@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: cd933dca6d0daf148929b85c2ce8a422
-  - enabled: 1
-    path: Assets/Scenes/GamePad.unity
-    guid: 08c0ca8053b1904419541910eabef706
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Nivell 1.unity
     guid: 9ee973a84b0996547977a5a773de590a
