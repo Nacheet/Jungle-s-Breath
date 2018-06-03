@@ -15,7 +15,7 @@ public class BatBoss : MonoBehaviour {
     GameObject enemyCopy;
     public Transform state0Position;
 
-    //public Animator animator;
+    public Animator animator;
 
     public int state = 0;
     public int health;
@@ -90,7 +90,7 @@ public class BatBoss : MonoBehaviour {
 
 	void Update ()
     {
-        /*if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x == 0)
+        if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x == 0)
         {
             animator.SetBool("FrontFly", true);
             animator.SetBool("LeftFly", false);
@@ -107,7 +107,7 @@ public class BatBoss : MonoBehaviour {
             animator.SetBool("FrontFly", false);
             animator.SetBool("LeftFly", true);
             animator.SetBool("RightFly", false);
-        }*/
+        }
 
         if (state == 0)
         {
@@ -247,7 +247,7 @@ public class BatBoss : MonoBehaviour {
         {
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+            animator.SetBool("Knocked", false);
             float distThis = this.GetComponent<Transform>().position.x - state1position.transform.position.x;
             distThis = Mathf.Abs(distThis);
 
@@ -327,6 +327,7 @@ public class BatBoss : MonoBehaviour {
                     {
                         if (Time.time < timeOnGround + timeGround)
                         {
+                            animator.SetBool("Knocked", true);
                             Debug.Log("STAY ON GROUND");
                             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                         }
@@ -357,7 +358,7 @@ public class BatBoss : MonoBehaviour {
             {
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+                animator.SetBool("Knocked", false);
                 Debug.Log("MOVING");
                 if(initFallPos == 0)
                 { 
@@ -412,6 +413,7 @@ public class BatBoss : MonoBehaviour {
         if(collision.collider.gameObject.tag == "Shot")
         {
             health--;
+            animator.SetTrigger("Hitted");
         }
 
         if(collision.collider.gameObject.tag == "Player" && GameObject.Find("Player").GetComponent<PlayerController>().shieldAtt && state == 3)

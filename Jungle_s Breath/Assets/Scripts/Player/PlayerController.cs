@@ -153,11 +153,13 @@ public class PlayerController : MonoBehaviour
                     wallJumped = true;
                     player.GetComponent<Rigidbody2D>().velocity = new Vector2(maxSpeed * wallHitDirection, normalJumpSpeed);
                     wallJumpTime = Time.time;
+                    animator.SetTrigger("jump");
                 }
                 else if (enableDoubleJump)
                 {
                     jump();
                     enableDoubleJump = false;
+                    animator.SetTrigger("jump");
                 }
             }
 
@@ -173,12 +175,18 @@ public class PlayerController : MonoBehaviour
                 falling = false;
 
             if ((leftWallHit || rightWallHit) && falling)
+            {
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, slidingVelocity);
+            }
             else if (falling)
+            {
                 player.GetComponent<Rigidbody2D>().gravityScale = fallingGravity;
-            else
-                player.GetComponent<Rigidbody2D>().gravityScale = normalGravity;
+            }
 
+            else
+            {
+                player.GetComponent<Rigidbody2D>().gravityScale = normalGravity;
+            }
 
 
             //Shield
@@ -227,7 +235,14 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("onTheGround", false);
 
             if (leftWallHit || rightWallHit)
+            {
                 animator.SetBool("wallCollision", true);
+
+                if (rightWallHit)
+                    rend.flipX = true;
+                else
+                    rend.flipX = false;
+            }
             else
                 animator.SetBool("wallCollision", false);
 
@@ -268,13 +283,11 @@ public class PlayerController : MonoBehaviour
             {
                 shield.GetComponent<BoxCollider2D>().enabled = false;
                 animator.SetBool("dash", true);
-                //rend.flipY = true;
             }
             else
             {
                 shield.GetComponent<BoxCollider2D>().enabled = true;
                 animator.SetBool("dash", false);
-                //rend.flipY = false;
             }
         }
         else
@@ -284,7 +297,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //Colliding with wall with animation bugs
+        //Colliding with wall animation bugs
 
         if ((leftWallHit && onTheGround && player.GetComponent<Rigidbody2D>().velocity.x < 0) || (rightWallHit && onTheGround && player.GetComponent<Rigidbody2D>().velocity.x > 0))
             animator.SetBool("moving", false);
@@ -318,7 +331,7 @@ public class PlayerController : MonoBehaviour
     {
         bool retVal = false;
 
-        float lenghtToSearch = 0.1f;
+        float lenghtToSearch = 0.05f;
         float colliderLimit = 0.01f;
 
         Vector2 lineStart = new Vector2(this.transform.position.x - rend.bounds.extents.x - colliderLimit, this.transform.position.y);
@@ -341,7 +354,7 @@ public class PlayerController : MonoBehaviour
     {
         bool retVal = false;
 
-        float lenghtToSearch = 0.1f;
+        float lenghtToSearch = 0.05f;
         float colliderLimit = 0.01f;
 
         Vector2 lineStart = new Vector2(this.transform.position.x + rend.bounds.extents.x + colliderLimit, this.transform.position.y);

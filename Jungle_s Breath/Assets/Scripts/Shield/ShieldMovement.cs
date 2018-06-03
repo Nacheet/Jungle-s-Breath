@@ -93,6 +93,8 @@ public class ShieldMovement : MonoBehaviour
 
             if (Input.GetAxisRaw("Vertical") == -1)
             {
+                animator.SetBool("shieldDown", false);
+
                 shieldPos[5] = false; //shieldDown
                 if (!movingRight)
                     shieldPos[3] = true; //shieldLeft
@@ -141,8 +143,11 @@ public class ShieldMovement : MonoBehaviour
             {
 
                 shieldPos[5] = true; //shieldDown
+                animator.SetBool("shieldDown", true);
             }
             else
+                animator.SetBool("shieldDown", false);
+            /*else
             {
                 if (movingRight)
                 {
@@ -155,7 +160,7 @@ public class ShieldMovement : MonoBehaviour
                     shieldPos[0] = false; //shieldDefaultR
                 }
                 shieldPos[5] = false;
-            }
+            }*/
 
 
         }
@@ -166,6 +171,7 @@ public class ShieldMovement : MonoBehaviour
             shieldPos[3] = false; //shieldLeft
             shieldPos[4] = false; //shieldUp
             shieldPos[5] = false; //shieldDown
+            animator.SetBool("shieldDown", false);
             animator.SetBool("shieldUp", false);
 
             if (movingRight)

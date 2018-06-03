@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour {
     {
         if(start && Time.time > time + timeToStart)
         {
-            musicChanger.ChangeAudioClip();
             playGame();
         }
     }
@@ -28,6 +27,7 @@ public class MainMenu : MonoBehaviour {
 
     public void startCounter()
     {
+        musicChanger.ChangeAudioClip();
         start = true;
         time = Time.time;
     }
