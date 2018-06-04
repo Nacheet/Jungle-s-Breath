@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePad.unity
     guid: 999ca30e4c1c57e4b95a0f0ab6a9c0f7
   - enabled: 1
-    path: Assets/Scenes/Nivell 1.unity
-    guid: 9ee973a84b0996547977a5a773de590a
+    path: Assets/Scenes/Level 1.unity
+    guid: 88937dfbbbe68584f9a0c7dd1242be09
   - enabled: 1
-    path: Assets/Scenes/Nivell 2.unity
-    guid: d788731b6bb21294693dd9882e9c39d2
+    path: Assets/Scenes/Level 2.unity
+    guid: 370dd1ad6aad39f498b083b9e83b5d58

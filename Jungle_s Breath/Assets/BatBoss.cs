@@ -5,6 +5,7 @@ using UnityEngine;
 public class BatBoss : MonoBehaviour {
 
     public GameObject enemies;
+    public GameObject exitRock;
 
     public GameObject stalactites1, stalactites2, stalactites3;
     public Transform state1position;
@@ -12,8 +13,11 @@ public class BatBoss : MonoBehaviour {
     public Transform batSpawnLeft, batSpawnRight, batSpawn;
     public Transform newBat;
 
+    SpriteRenderer rend;
+
     GameObject enemyCopy;
     public Transform state0Position;
+    public Transform state3Position;
 
     public Animator animator;
 
@@ -86,10 +90,14 @@ public class BatBoss : MonoBehaviour {
         nextFall = Random.Range(2f, 4f);
         this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
         resistance = 3;
+
+        rend = this.GetComponent<SpriteRenderer>();
     }
 
 	void Update ()
     {
+        rend.flipY = false;
+
         if (this.gameObject.GetComponent<Rigidbody2D>().velocity.x == 0)
         {
             animator.SetBool("FrontFly", true);
@@ -168,18 +176,18 @@ public class BatBoss : MonoBehaviour {
 
             distanceToSpawn = this.GetComponent<Transform>().position.x - state1position.transform.position.x;
             distanceToSpawn = Mathf.Abs(distanceToSpawn);
-            //Debug.Log(distanceToSpawn);
+
             if (distanceToSpawn >= 0.1)
             {
-                //Debug.Log("MOVING TO POSITION");
-               Vector2 moveToPos = new Vector2(state1position.position.x - this.gameObject.transform.position.x, state1position.position.y - this.gameObject.transform.position.y);
+                rend.flipY = false;
+                Vector2 moveToPos = new Vector2(state1position.position.x - this.gameObject.transform.position.x, state1position.position.y - this.gameObject.transform.position.y);
                 moveToPos.Normalize();
 
                 this.gameObject.GetComponent<Rigidbody2D>().velocity = moveToPos * 5;
             }
             else
             {
-                Debug.Log("ON POSITION");
+                rend.flipY = true;
                 this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
@@ -253,7 +261,7 @@ public class BatBoss : MonoBehaviour {
 
             if (distThis > 0.1)
             {
-                Debug.Log("MOVING TO SHAKE POS");
+                rend.flipY = false;
                 Vector2 moveToPos = new Vector2(state1position.position.x - this.gameObject.transform.position.x, state1position.position.y - this.gameObject.transform.position.y);
                 moveToPos.Normalize();
 
@@ -261,7 +269,7 @@ public class BatBoss : MonoBehaviour {
             }
             else
             {
-                Debug.Log("SHAKING");
+                rend.flipY = true;
                 if (timeForShake == 0)
                     timeForShake = Time.time;
 
@@ -281,6 +289,12 @@ public class BatBoss : MonoBehaviour {
                     GameObject.Find("Player").GetComponent<PlayerController>().enabled = true;
                 }
 
+                if(batHit)
+                {
+                    batHit = false;
+                    resistance--;
+                }
+
             }
         }
         else if(state == 3)
@@ -288,7 +302,7 @@ public class BatBoss : MonoBehaviour {
             if (fallTime == 0)
                 fallTime = Time.time;
 
-            dist = this.GetComponent<Transform>().position.y - state1position.transform.position.y;
+            dist = this.GetComponent<Transform>().position.y - state3Position.transform.position.y;
             dist = Mathf.Abs(dist);
 
             if(Time.time > fallTime + nextFall)
@@ -311,7 +325,6 @@ public class BatBoss : MonoBehaviour {
 
                 fallTime = 50 * Time.time;
                 falls++;
-                Debug.Log("FALL START");
             }
 
 
@@ -328,7 +341,6 @@ public class BatBoss : MonoBehaviour {
                         if (Time.time < timeOnGround + timeGround)
                         {
                             animator.SetBool("Knocked", true);
-                            Debug.Log("STAY ON GROUND");
                             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                         }
                         else
@@ -337,7 +349,6 @@ public class BatBoss : MonoBehaviour {
                             this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                             falls = 0;
                             falling = false;
-                            Debug.Log("FLY");
                             fallTime = Time.time;
                             nextFall = Random.Range(2f, 3f);
                         }
@@ -347,7 +358,6 @@ public class BatBoss : MonoBehaviour {
                         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                         this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                         falling = false;
-                        Debug.Log("GROUND COL");
                         groundCol = false;
                         fallTime = Time.time;
                         nextFall = Random.Range(2f, 3f);
@@ -359,17 +369,16 @@ public class BatBoss : MonoBehaviour {
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 animator.SetBool("Knocked", false);
-                Debug.Log("MOVING");
                 if(initFallPos == 0)
                 { 
-                    Vector2 moveToPos = new Vector2(state1position.position.x - this.gameObject.transform.position.x, state1position.position.y - this.gameObject.transform.position.y);
+                    Vector2 moveToPos = new Vector2(state3Position.position.x - this.gameObject.transform.position.x, state3Position.position.y - this.gameObject.transform.position.y);
                     moveToPos.Normalize();
 
                     this.gameObject.GetComponent<Rigidbody2D>().velocity = moveToPos * 10;
                 }
                 else
                 {
-                    Vector2 moveToPos = new Vector2(initFallPos + 2 * speedDir * distanceToPlayerX - this.gameObject.transform.position.x, state1position.position.y - this.gameObject.transform.position.y);
+                    Vector2 moveToPos = new Vector2(initFallPos + 2 * speedDir * distanceToPlayerX - this.gameObject.transform.position.x, state3Position.position.y - this.gameObject.transform.position.y);
                     moveToPos.Normalize();
 
                     this.gameObject.GetComponent<Rigidbody2D>().velocity = moveToPos * 10;
@@ -377,7 +386,6 @@ public class BatBoss : MonoBehaviour {
             }
             else if(dist <= 0.01f && !falling)
             {
-                Debug.Log("MOVING AROUND");
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
                 this.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -387,18 +395,16 @@ public class BatBoss : MonoBehaviour {
             if (batHit)
             {
                 state = 2;
-                batHit = false;
-                resistance--;
                 timeForShake = 0;
             }
         }
 
         if (resistance == 2)
-            Debug.Log("PEDRA POC TRENCADA");
+            exitRock.GetComponent<RockBehaviour>().health = 3;
         else if (resistance == 1)
-            Debug.Log("PEDRA SEMITRENCADA");
+            exitRock.GetComponent<RockBehaviour>().health = 2;
         else if (resistance == 0)
-            Debug.Log("PEDRA TRENCADA");
+            exitRock.GetComponent<RockBehaviour>().health = 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
