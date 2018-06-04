@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour {
 
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject settingsMenu;
     public GameObject fades;
+    public GameObject guide;
 
     private RestartButtonSizePause restart;
 
@@ -17,18 +19,18 @@ public class PauseMenu : MonoBehaviour {
     }
 
 	void Update () {
-		
         if(Input.GetButtonDown("Pause"))
         {
-            if (GameIsPaused)
+            if (GameIsPaused && !settingsMenu.activeInHierarchy)
                 Resume();
-            else
+            else if(!GameIsPaused && !settingsMenu.activeInHierarchy)
                 Pause();
         }
 	}
 
     public void Resume()
     {
+        guide.SetActive(false);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -37,6 +39,7 @@ public class PauseMenu : MonoBehaviour {
 
     void Pause()
     {
+        guide.SetActive(true);
         fades.SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
