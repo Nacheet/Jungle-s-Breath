@@ -1159,6 +1159,7 @@ MonoBehaviour:
     m_Bits: 2560
   animator: {fileID: 95110007734378540}
   pauseMenu: {fileID: 0}
+  SFXController: {fileID: 0}
   onTheGround: 0
   falling: 0
   movingRight: 0
@@ -1180,7 +1181,7 @@ MonoBehaviour:
   attSpeed: 3
   attCoolDown: 1.5
   nextAtt: 0
-  attDuration: 0.35
+  attDuration: 0.2
   lastAttDone: 0
   canDash: 1
   dash: 0

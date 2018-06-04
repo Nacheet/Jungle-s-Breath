@@ -9,7 +9,7 @@ public class RockBehaviour : MonoBehaviour {
     public Sprite rock2Hit;
     public Sprite rock3Hit;
 
-
+    public GameObject SFXManager;
     public int health = 4;
 
 	// Use this for initialization
@@ -35,6 +35,7 @@ public class RockBehaviour : MonoBehaviour {
                 this.GetComponent<SpriteRenderer>().sprite = rock3Hit;
                 break;
             case 0:
+                SFXManager.GetComponent<SFXControllerLevel2>().playRockBroken();
                 Destroy(this.gameObject);
                 break;
             default:
@@ -49,6 +50,7 @@ public class RockBehaviour : MonoBehaviour {
         if (collision.collider.gameObject.tag == "Player" && GameObject.Find("Player").GetComponent<PlayerController>().shieldAtt)
         {
             health--;
+            SFXManager.GetComponent<SFXControllerLevel2>().playRockHit();
         }
     }
 }

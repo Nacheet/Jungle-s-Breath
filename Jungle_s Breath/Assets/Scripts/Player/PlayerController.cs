@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask floor;
     public Animator animator;
     public PauseMenu pauseMenu;
+    public GameObject SFXController;
 
     //LateralMovement
     public bool onTheGround = false;
@@ -81,6 +82,21 @@ public class PlayerController : MonoBehaviour
 
         if (!dead)
         {
+            //SFX effects
+            if (onTheGround && this.GetComponent<Rigidbody2D>().velocity.x != 0 && !dash && !paused)
+                SFXController.GetComponent<SFXControllerLevel1>().playFootStep();
+            else
+                SFXController.GetComponent<SFXControllerLevel1>().stopFootStep();
+
+            if (wallHit && !onTheGround)
+                SFXController.GetComponent<SFXControllerLevel1>().playSliding();
+            else
+                SFXController.GetComponent<SFXControllerLevel1>().stopSliding();
+
+            if (dash)
+                SFXController.GetComponent<SFXControllerLevel1>().playPlayerDash();
+
+
             paused = pauseMenu.GetComponent<PauseMenu>().GameIsPaused;
             if (movingRight && !paused)
                 rend.flipX = false;
@@ -378,5 +394,11 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("jump");
     }
 
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Water")
+            SFXController.GetComponent<SFXControllerLevel1>().playWaterSplash();
+
+    }
 }
 

@@ -23,6 +23,8 @@ public class Death : MonoBehaviour
 
     public CanvasGroup uiElement;
 
+    GameObject SFXManager;
+
     public void FadeIn()
     {
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1));
@@ -92,6 +94,7 @@ public class Death : MonoBehaviour
     {
         FadeOut();
         dead = false;
+        SFXManager = this.GetComponent<PlayerController>().SFXController;
     }
 
 
@@ -101,7 +104,11 @@ public class Death : MonoBehaviour
             time = Time.time;
 
         if (dead)
+        {
             firstDeadth = true;
+            SFXManager.GetComponent<SFXControllerLevel1>().playPlayerHit();
+        }
+
 
         if (playerCol && Time.time > time + 0.1)
         {
