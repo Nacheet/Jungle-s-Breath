@@ -24,7 +24,6 @@ public class Boss1Behaviour : MonoBehaviour {
 
     private Vector3 initialPosition;
 
-
     // Use this for initialization
     void Start()
     {
@@ -115,7 +114,6 @@ public class Boss1Behaviour : MonoBehaviour {
         }
         else
         {
-
             if (Time.time>nextDieTime&&counter<4)
             {
                 gameObject.GetComponent<Transform>().localScale = gameObject.GetComponent<Transform>().localScale - new Vector3(5, 5, 0);

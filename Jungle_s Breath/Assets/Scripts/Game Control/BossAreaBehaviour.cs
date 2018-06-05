@@ -10,6 +10,9 @@ public class BossAreaBehaviour : MonoBehaviour {
     public GameObject boss1;
     public bool bossActivated= false;
 
+    public GameObject SFXManager;
+    GameObject boss;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
@@ -24,18 +27,24 @@ public class BossAreaBehaviour : MonoBehaviour {
 
             if (!bossActivated)
             {
-                Instantiate<GameObject>(boss1);
+                boss = Instantiate<GameObject>(boss1);
                 bossActivated = true;
             }
 
+            if (boss.GetComponent<Boss1Behaviour>().bossHP <= 0)
+                SFXManager.GetComponent<SFXControllerLevel1>().stopBoss1();
+            else
+                SFXManager.GetComponent<SFXControllerLevel1>().playBoss1();
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
+
+            SFXManager.GetComponent<SFXControllerLevel1>().stopBoss1();
+
             GameObject.Find("Player").GetComponent<MusicChanger>().music1 = GameObject.Find("Boss1Music");
             GameObject.Find("Player").GetComponent<MusicChanger>().music2 = GameObject.Find("MainMusic");
 

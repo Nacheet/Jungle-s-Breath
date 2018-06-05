@@ -9,6 +9,9 @@ public class SFXControllerLevel1 : MonoBehaviour {
     public AudioSource sliding;
     public AudioSource playerHit;
     public AudioSource playerDash;
+    public AudioSource Boss1;
+    public AudioSource outside;
+    public AudioSource cave;
 
     void Start()
     {
@@ -17,6 +20,12 @@ public class SFXControllerLevel1 : MonoBehaviour {
 
         sliding.Play();
         sliding.mute = true;
+
+        Boss1.Play();
+        Boss1.mute = true;
+
+        outside.Play();
+        outside.mute = true;
     }
 
     public void playFootStep()
@@ -53,5 +62,35 @@ public class SFXControllerLevel1 : MonoBehaviour {
     public void playPlayerDash()
     {
         playerDash.Play();
+    }
+
+    public void playBoss1()
+    {
+        Boss1.mute = false;
+    }
+
+    public void stopBoss1()
+    {
+        Boss1.mute = true;
+    }
+
+    public void playOutside()
+    {
+        outside.mute = false;
+    }
+
+    public void stopOutside()
+    {
+        outside.mute = true;
+    }
+
+    public void playCave()
+    {
+        cave.Play();
+    }
+
+    public void stopCave()
+    {
+        cave.Stop();
     }
 }
