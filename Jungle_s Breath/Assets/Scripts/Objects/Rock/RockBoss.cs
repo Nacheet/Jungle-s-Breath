@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockBehaviour : MonoBehaviour {
+public class RockBoss : MonoBehaviour {
 
     public Sprite rockFullHP;
     public Sprite rock1Hit;
@@ -49,7 +49,7 @@ public class RockBehaviour : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.collider.gameObject.tag == "Player" && GameObject.Find("Player").GetComponent<PlayerController>().shieldAtt)
+        if (collision.collider.gameObject.tag == "Player" && GameObject.Find("Player").GetComponent<PlayerController>().shieldAtt && health == 1)
         {
             health--;
             SFXManager.GetComponent<SFXControllerLevel2>().playRockHit();

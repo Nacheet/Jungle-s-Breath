@@ -93,7 +93,9 @@ public class Death : MonoBehaviour
     void Start()
     {
         FadeOut();
-        dead = false;
+        dead = true;
+        shieldCol = false;
+        playerCol = true;
         SFXManager = this.GetComponent<PlayerController>().SFXController;
     }
 

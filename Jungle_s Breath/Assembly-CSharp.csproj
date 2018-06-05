@@ -58,6 +58,8 @@
      <Compile Include="Assets\Dust.cs" />
      <Compile Include="Assets\GamePadMenu.cs" />
      <Compile Include="Assets\goToLevel2.cs" />
+     <Compile Include="Assets\goToLevel3.cs" />
+     <Compile Include="Assets\hideDeadFade.cs" />
      <Compile Include="Assets\RatArea.cs" />
      <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
@@ -95,6 +97,7 @@
      <Compile Include="Assets\Scripts\Menu\RestartButtonSizePause.cs" />
      <Compile Include="Assets\Scripts\Menu\SettingsMenu.cs" />
      <Compile Include="Assets\Scripts\Objects\Rock\RockBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Objects\Rock\RockBoss.cs" />
      <Compile Include="Assets\Scripts\PickUpScript.cs" />
      <Compile Include="Assets\Scripts\Player\Death.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
