@@ -9,6 +9,8 @@ public class SFXControllerLevel2 : MonoBehaviour {
     public AudioSource batFly;
     public AudioSource rats;
     public AudioSource rockBroken;
+    public AudioSource fall;
+    public AudioSource boss2;
 
     void Start()
     {
@@ -20,6 +22,9 @@ public class SFXControllerLevel2 : MonoBehaviour {
 
         rats.Play();
         rats.mute = true;
+
+        boss2.Play();
+        boss2.mute = true;
     }
 
     public void playRockHit()
@@ -60,5 +65,20 @@ public class SFXControllerLevel2 : MonoBehaviour {
     public void playRockBroken()
     {
         rockBroken.Play();
+    }
+
+    public void playFall()
+    {
+        fall.Play();
+    }
+
+    public void playBoss2()
+    {
+        boss2.mute = false;
+    }
+
+    public void stopBoss2()
+    {
+        boss2.mute = true;
     }
 }

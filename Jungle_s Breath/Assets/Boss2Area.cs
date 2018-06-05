@@ -10,6 +10,9 @@ public class Boss2Area : MonoBehaviour {
     public GameObject mainCamera;
     public GameObject bossCamera;
 
+    public GameObject SFXManager;
+    public GameObject bat;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
@@ -17,6 +20,17 @@ public class Boss2Area : MonoBehaviour {
             playerIsInside = true;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera1 = actualCamera;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera2 = bossCamera;
+
+            if (!bat.GetComponent<BatBoss>().activateCave)
+            {
+                SFXManager.GetComponent<SFXControllerLevel2>().playBoss2();
+                SFXManager.GetComponent<SFXControllerLevel1>().stopCave();
+            }
+            else
+            {
+                SFXManager.GetComponent<SFXControllerLevel2>().stopBoss2();
+                SFXManager.GetComponent<SFXControllerLevel1>().playCave();
+            }
 
         }
 
@@ -26,6 +40,9 @@ public class Boss2Area : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player")
         {
+            SFXManager.GetComponent<SFXControllerLevel2>().stopBoss2();
+            SFXManager.GetComponent<SFXControllerLevel1>().playCave();
+
             playerIsInside = false;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera1 = actualCamera;
             GameObject.Find("Player").GetComponent<CameraAproach>().camera2 = mainCamera;

@@ -86,6 +86,7 @@ public class BatBoss : MonoBehaviour {
     int resistance;
 
     public bool activateCave = false;
+    bool sound = false;
 
     void Start()
     {
@@ -434,6 +435,11 @@ public class BatBoss : MonoBehaviour {
             else if(state == 4)
             {
                 activateCave = true;
+                if (!sound)
+                {
+                    SFXManager.GetComponent<SFXControllerLevel2>().playFall();
+                    sound = true;
+                }
             }
 
             if (resistance == 2)
@@ -446,7 +452,7 @@ public class BatBoss : MonoBehaviour {
                 updated = true;
             }
 
-            if (exitRock.GetComponent<RockBoss>().batDie)
+            if (exitRock.GetComponent<RockBoss>().batDie && state != 4)
                 state = 4;
         }    
         else
