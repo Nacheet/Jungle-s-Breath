@@ -19,6 +19,7 @@ public class Boss1Behaviour : MonoBehaviour {
     public bool dead = false;
     public float dieTimeRate = 3.0f, nextDieTime;
     private int counter = 0;
+    private Vector3 initShotSpawnBoss;
 
 
     private Vector3 initialPosition;
@@ -30,6 +31,7 @@ public class Boss1Behaviour : MonoBehaviour {
         nextEnemy = Time.time + Random.Range(minGenerateTime, maxGenerateTime);
         nextShot = Time.time + Random.Range(minFireTime, maxFireTime);
         initialPosition = gameObject.GetComponent<Transform>().localPosition;
+        initShotSpawnBoss = shotSpawnBoss.GetComponent<Transform>().position;
         init1 = shotSpawn1.GetComponent<Transform>().position;
         init2 = shotSpawn2.GetComponent<Transform>().position;
         init3 = shotSpawn3.GetComponent<Transform>().position;
@@ -104,8 +106,9 @@ public class Boss1Behaviour : MonoBehaviour {
             }
 
             gameObject.GetComponent<Transform>().localScale = new Vector3(20 + bossHP, 20 + bossHP, 0);
-            gameObject.GetComponent<Transform>().localPosition = initialPosition + (new Vector3(0, -0.65f * (10 - bossHP), 0));
+            gameObject.GetComponent<Transform>().localPosition = initialPosition + (new Vector3(0.65f * (10 - bossHP), -0.65f * (10 - bossHP), 0));
 
+            shotSpawnBoss.GetComponent<Transform>().position = initShotSpawnBoss;
             shotSpawn1.GetComponent<Transform>().position = init1;
             shotSpawn2.GetComponent<Transform>().position = init2;
             shotSpawn3.GetComponent<Transform>().position = init3;

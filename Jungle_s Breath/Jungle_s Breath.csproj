@@ -194,9 +194,6 @@
     <Reference Include="UnityEngine.WindModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
     </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -299,6 +296,9 @@
     <Compile Include="Assets\Dust.cs" />
     <Compile Include="Assets\GamePadMenu.cs" />
     <Compile Include="Assets\goToLevel2.cs" />
+    <Compile Include="Assets\goToLevel3.cs" />
+    <Compile Include="Assets\hideDeadFade.cs" />
+    <Compile Include="Assets\RatArea.cs" />
     <Compile Include="Assets\Scripts\Box\BoxMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss1Behaviour.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bosses\Second Boss\BossStalactite.cs" />
@@ -335,6 +335,7 @@
     <Compile Include="Assets\Scripts\Menu\RestartButtonSizePause.cs" />
     <Compile Include="Assets\Scripts\Menu\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\Objects\Rock\RockBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Objects\Rock\RockBoss.cs" />
     <Compile Include="Assets\Scripts\PickUpScript.cs" />
     <Compile Include="Assets\Scripts\Player\Death.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
@@ -342,6 +343,8 @@
     <Compile Include="Assets\Scripts\Shield\ShieldHitDetector.cs" />
     <Compile Include="Assets\Scripts\Shield\ShieldMovement.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Tutorials.cs" />
+    <Compile Include="Assets\SFXControllerLevel1.cs" />
+    <Compile Include="Assets\SFXControllerLevel2.cs" />
     <Compile Include="Assets\StalactiteBat.cs" />
     <Compile Include="Assets\StalactiteGenerator.cs" />
     <Compile Include="Assets\StalactiteSpawn.cs" />
