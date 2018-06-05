@@ -423,11 +423,11 @@ public class BatBoss : MonoBehaviour {
             }
 
             if (resistance == 2)
-                exitRock.GetComponent<RockBehaviour>().health = 3;
+                exitRock.GetComponent<RockBoss>().health = 3;
             else if (resistance == 1)
-                exitRock.GetComponent<RockBehaviour>().health = 2;
+                exitRock.GetComponent<RockBoss>().health = 2;
             else if (resistance == 0)
-                exitRock.GetComponent<RockBehaviour>().health = 1;
+                exitRock.GetComponent<RockBoss>().health = 1;
         }    
         else
         {

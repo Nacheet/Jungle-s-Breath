@@ -71,7 +71,7 @@ public class GamePadText : MonoBehaviour
             if (Time.time - initTime >= endTime)
             {
                 text1.SetActive(false);
-                SceneManager.LoadScene("Nivell 1");
+                SceneManager.LoadScene("Level 1");
             }
         }
     }
