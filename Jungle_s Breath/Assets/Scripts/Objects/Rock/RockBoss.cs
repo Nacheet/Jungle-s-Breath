@@ -8,15 +8,11 @@ public class RockBoss : MonoBehaviour {
     public Sprite rock1Hit;
     public Sprite rock2Hit;
     public Sprite rock3Hit;
+    public GameObject partSystem;
 
+    public float destroyTime = 2;
     public GameObject SFXManager;
     public int health = 4;
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -38,7 +34,9 @@ public class RockBoss : MonoBehaviour {
                 break;
             case 0:
                 SFXManager.GetComponent<SFXControllerLevel2>().playRockBroken();
-                Destroy(this.gameObject);
+                this.GetComponent<SpriteRenderer>().enabled = false;
+                partSystem.SetActive(true);
+                Destroy(this.gameObject, destroyTime);
                 break;
             default:
                 break;

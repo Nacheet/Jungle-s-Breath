@@ -110,6 +110,7 @@
      <Compile Include="Assets\StalactiteBat.cs" />
      <Compile Include="Assets\StalactiteGenerator.cs" />
      <Compile Include="Assets\StalactiteSpawn.cs" />
+     <Compile Include="Assets\startBlackFade.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples _ Extras\Scripts\Benchmark02.cs" />

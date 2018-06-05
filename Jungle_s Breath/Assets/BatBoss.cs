@@ -80,7 +80,7 @@ public class BatBoss : MonoBehaviour {
     public bool attackOnceAfterState2 = true;
     public float timeOnGround = 3f;
     public float timeGround;
-
+    bool updated = false;
     int resistance;
 
     void Start()
@@ -159,21 +159,21 @@ public class BatBoss : MonoBehaviour {
                     if (health <= 0 && !state0Phase3)
                     {
                         state0Phase3 = true;
-                        Destroy(stalactites3.gameObject);
+                        stalactites3.gameObject.SetActive(false);
                         state = 1;
                     }
 
                     if (health <= maxHealth * 1 / 3 && !state0Phase2)
                     {
                         state0Phase2 = true;
-                        Destroy(stalactites2.gameObject);
+                        stalactites2.gameObject.SetActive(false);
                         state = 1;
                     }
 
                     if (health <= maxHealth * 2 / 3 && !state0Phase1)
                     {
                         state0Phase1 = true;
-                        Destroy(stalactites1.gameObject);
+                        stalactites1.gameObject.SetActive(false);
                         state = 1;
                     }
                 }
@@ -426,8 +426,16 @@ public class BatBoss : MonoBehaviour {
                 exitRock.GetComponent<RockBoss>().health = 3;
             else if (resistance == 1)
                 exitRock.GetComponent<RockBoss>().health = 2;
-            else if (resistance == 0)
+            else if (resistance == 0 && !updated)
+            {
                 exitRock.GetComponent<RockBoss>().health = 1;
+                updated = true;
+            }
+
+            if(exitRock.GetComponent<RockBoss>().health == 0)
+            {
+
+            }
         }    
         else
         {

@@ -24,6 +24,7 @@ public class Death : MonoBehaviour
     public CanvasGroup uiElement;
 
     GameObject SFXManager;
+    public GameObject Fades;
 
     public void FadeIn()
     {
@@ -96,6 +97,7 @@ public class Death : MonoBehaviour
         dead = true;
         shieldCol = false;
         playerCol = true;
+        this.transform.position = teleportPos.position;
         SFXManager = this.GetComponent<PlayerController>().SFXController;
     }
 
@@ -108,7 +110,8 @@ public class Death : MonoBehaviour
         if (dead)
         {
             firstDeadth = true;
-            SFXManager.GetComponent<SFXControllerLevel1>().playPlayerHit();
+            if(Fades.GetComponent<startBlackFade>().enableDeathSound)
+                SFXManager.GetComponent<SFXControllerLevel1>().playPlayerHit();
         }
 
 
