@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject SFXController;
 
     //LateralMovement
+    public bool aboveBox = false;
     public bool onTheGround = false;
     private float maxSpeed = 14;
     private float jumpSpeed;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
     //ShieldAttack
     public bool shieldAtt, canAtt;
     public float attSpeed;
-    public float attCoolDown = 4.0f;
+    public float attCoolDown = 1.5f;
     public float nextAtt = 0.0f;
     public float attDuration = 1.5f;
     public float lastAttDone;
@@ -104,7 +105,10 @@ public class PlayerController : MonoBehaviour
                 rend.flipX = true;
 
             float horizontal;
-            onTheGround = isOnGround();
+            if (!aboveBox)
+                onTheGround = isOnGround();
+            else
+                onTheGround = true;
 
 
             if ((leftWallHit || rightWallHit) && !onTheGround)
@@ -398,7 +402,14 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Water")
             SFXController.GetComponent<SFXControllerLevel1>().playWaterSplash();
+        if (coll.gameObject.tag == "Box")
+            aboveBox = true;
+    }
 
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Box")
+            aboveBox = false;
     }
 }
 

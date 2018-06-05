@@ -13,6 +13,7 @@ TagManager:
   - Water
   - Deadly
   - Bat
+  - Box
   layers:
   - Default
   - TransparentFX
