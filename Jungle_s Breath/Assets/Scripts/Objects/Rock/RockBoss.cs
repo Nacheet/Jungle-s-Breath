@@ -13,6 +13,7 @@ public class RockBoss : MonoBehaviour {
     public float destroyTime = 2;
     public GameObject SFXManager;
     public int health = 4;
+    public bool batDie = false;
 
     // Update is called once per frame
     void Update()
@@ -35,7 +36,10 @@ public class RockBoss : MonoBehaviour {
             case 0:
                 SFXManager.GetComponent<SFXControllerLevel2>().playRockBroken();
                 this.GetComponent<SpriteRenderer>().enabled = false;
+                this.GetComponent<BoxCollider2D>().enabled = false;
+                GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 partSystem.SetActive(true);
+                batDie = true;
                 Destroy(this.gameObject, destroyTime);
                 break;
             default:

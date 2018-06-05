@@ -51,11 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\activateLimitColliders.cs" />
      <Compile Include="Assets\bat.cs" />
      <Compile Include="Assets\BatBoss.cs" />
      <Compile Include="Assets\Boss2Area.cs" />
      <Compile Include="Assets\CameraShake.cs" />
      <Compile Include="Assets\Dust.cs" />
+     <Compile Include="Assets\FallingRock.cs" />
      <Compile Include="Assets\GamePadMenu.cs" />
      <Compile Include="Assets\goToLevel2.cs" />
      <Compile Include="Assets\goToLevel3.cs" />

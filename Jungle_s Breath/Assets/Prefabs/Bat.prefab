@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 95702647185988960}
   m_Layer: 14
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Deadly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

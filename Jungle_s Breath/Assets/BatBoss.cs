@@ -26,6 +26,8 @@ public class BatBoss : MonoBehaviour {
     public bool isActive = false;
     public GameObject bossArea;
 
+    public GameObject rocks;
+
     public int state = 0;
     public int health;
     public int maxHealth;
@@ -46,7 +48,7 @@ public class BatBoss : MonoBehaviour {
 
     //State 1
     float distanceToSpawn = 1;
-    float maxEnemies = 1;
+    public float maxEnemies = 1;
     float maxEnemiesCopy;
     public int counter = 0;
 
@@ -82,6 +84,8 @@ public class BatBoss : MonoBehaviour {
     public float timeGround;
     bool updated = false;
     int resistance;
+
+    public bool activateCave = false;
 
     void Start()
     {
@@ -212,6 +216,12 @@ public class BatBoss : MonoBehaviour {
                     {
                         maxEnemies = maxEnemiesCopy * 2f;
                         lastState1 = true;
+                    }
+
+                    if (GameObject.Find("Player").GetComponent<Death>().dead)
+                    {
+                        counter = 0;
+                        time = Time.time;
                     }
 
 
@@ -421,6 +431,10 @@ public class BatBoss : MonoBehaviour {
                     timeForShake = 0;
                 }
             }
+            else if(state == 4)
+            {
+                activateCave = true;
+            }
 
             if (resistance == 2)
                 exitRock.GetComponent<RockBoss>().health = 3;
@@ -432,10 +446,8 @@ public class BatBoss : MonoBehaviour {
                 updated = true;
             }
 
-            if(exitRock.GetComponent<RockBoss>().health == 0)
-            {
-
-            }
+            if (exitRock.GetComponent<RockBoss>().batDie)
+                state = 4;
         }    
         else
         {

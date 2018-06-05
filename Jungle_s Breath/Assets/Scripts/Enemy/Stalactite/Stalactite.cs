@@ -17,6 +17,7 @@ public class Stalactite : MonoBehaviour {
     private float timeToStopPart = 0.5f;
 
     public bool destroy = false;
+    public bool falling = false;
 
 
     void Start()
@@ -32,6 +33,7 @@ public class Stalactite : MonoBehaviour {
 		if(playerUnder && time == 0)
         {
             GetComponent<Rigidbody2D>().gravityScale = maxGravity;
+            falling = true;
             time = Time.time;
             partsys.SetActive(true);
         }
