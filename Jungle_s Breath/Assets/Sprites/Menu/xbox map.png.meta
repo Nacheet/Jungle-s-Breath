@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: b382370ae886f1042869b2aa6bc9af81
-timeCreated: 1525719682
+timeCreated: 1528198442
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: xbox map_0
     21300002: xbox map_1
     21300004: xbox map_2
+    21300006: xbox map_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -91,7 +92,7 @@ TextureImporter:
         width: 380
         height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -105,7 +106,7 @@ TextureImporter:
         width: 31
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,6 +119,20 @@ TextureImporter:
         y: 210
         width: 31
         height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: xbox map_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 194
+        width: 66
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

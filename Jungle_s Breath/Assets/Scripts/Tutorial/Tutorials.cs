@@ -4,44 +4,32 @@ using UnityEngine;
 
 public class Tutorials : MonoBehaviour {
 
-    public GameObject player;
+    public GameObject tutorials;
     public GameObject message;
-   
-	// Use this for initialization
+
+
 	void Start () {
-
-   
-        message.SetActive(false);
-     
-    }
-
-   
-
-
-    void printTutorial1()
-    {
-        message.SetActive(true);
-    }
-
-    void deleteTutorial()
-    {
+        tutorials.SetActive(false);
         message.SetActive(false);
     }
-     
-
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
      {        
-
-        printTutorial1();
+        if(collision.gameObject.tag == "Player")
+        {
+            tutorials.SetActive(true);
+            message.SetActive(true);
+        }
               
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        deleteTutorial();
+        if (collision.gameObject.tag == "Player")
+        {
+            tutorials.SetActive(false);
+            message.SetActive(false);
+        }
     }
 
 
